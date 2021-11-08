@@ -1,0 +1,25 @@
+@import 'partials/common/fm.revealator.jquery.min.css';
+@import 'partials/common/reset.css';
+
+// МОИ СТИЛИ
+@import 'partials/common/vars.scss';
+@import 'partials/common/commonStyles.scss';
+@import 'partials/footer/footer.scss';
+@import 'partials/header/header.scss';
+@import 'partials/main.scss';
+
+.display_block {
+    display: block !important;
+}
+
+.display_content {
+    display: contents !important;
+}
+
+.revealator-delay1 {
+    transition-delay: 1s !important;
+}
+
+.lazy-load-image-loaded {
+    display: inline !important;
+}

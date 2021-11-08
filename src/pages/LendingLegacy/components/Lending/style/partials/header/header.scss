@@ -1,0 +1,131 @@
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 28px 0;
+
+  @include test1 {
+    padding: (1.82vw * 1.2) 0;
+  }
+
+  @include mMax {
+    padding: 5.86vw 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &_logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: auto;
+    color: #fff;
+    text-decoration: none;
+
+    @include mMax {
+      padding-right: 1.33vw;
+    }
+
+    img {
+      display: block;
+      width: 31px;
+
+      @include test1 {
+        width: (2.018vw * 1.2);
+      }
+
+      @include mMax {
+        width: 5.86vw;
+      }
+    }
+
+    span {
+      display: block;
+      margin-left: 8px;
+      font-weight: 900;
+      font-size: 26px;
+      line-height: 32px;
+      color: #fff;
+
+      @include test1 {
+        margin-left: (0.52vw * 1.2);
+        font-size: (1.69vw * 1.2);
+        line-height: (2.08vw * 1.2);
+      }
+
+      @include mMax {
+        margin-left: 1.33vw;
+        font-size: 4.26vw;
+        line-height: 5.33vw;
+      }
+    }
+  }
+
+  &_login-btn {
+    display: inline-block;
+    width: 66px;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.2s;
+
+    @include test1 {
+      width: (4.29vw * 1.2);
+      font-size: (1.17vw * 1.2);
+      line-height: (1.69vw * 1.2);
+    }
+
+    &:hover {
+      color: #fc6652;
+    }
+
+    @include mMax {
+      width: 13.06vw;
+      font-size: 3.46vw;
+      line-height: 4.8vw;
+    }
+  }
+
+  &_registration-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 164px;
+    height: 38px;
+    border: 1px solid #fc6652;
+    border-radius: 20px;
+    margin-right: 21px;
+    transition: 0.2s;
+
+    @include test1 {
+      width: (10.67vw * 1.2);
+      height: (2.47vw * 1.2);
+      border: 1px solid #fc6652;
+      border-radius: (1.3vw * 1.2);
+      margin-right: (1.36vw * 1.2);
+    }
+
+    &:hover {
+      color: #fff;
+      background-color: #fc6652;
+    }
+
+    @include mMax {
+      height: 6.93vw;
+      width: 28.53vw;
+      margin-right: 2.66vw;
+      border-radius: 5.33vw;
+    }
+  }
+}

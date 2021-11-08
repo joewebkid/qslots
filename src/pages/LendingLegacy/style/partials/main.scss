@@ -1,0 +1,3514 @@
+.main_section {
+  position: relative;
+  box-sizing: border-box;
+  padding: 200px 0 213px;
+  height: 762px;
+
+  @include test1 {
+    padding: (13.02vw * 1.2) (0 13.86vw * 1.2);
+    height: (49.6vw * 1.2);
+  }
+
+  @include mMax {
+    height: auto;
+    padding-top: 20.8vw;
+    padding-bottom: 32.53vw;
+  }
+
+  &-bg {
+    @include mMax {
+      &.descktop {
+        display: none;
+      }
+    }
+
+    &.mobile {
+      display: none;
+
+      @include mMax {
+        display: block;
+      }
+    }
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+
+    @include mMax {
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      object-fit: cover;
+      object-position: center bottom;
+    }
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    max-width: 1200px;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    @include mMax {
+      display: block;
+    }
+  }
+
+  &-banner {
+    position: relative;
+    width: 31.96vw;
+    height: 23.11vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    max-width: 491px;
+    max-height: 355px;
+
+    @media screen and (min-width: 1300px) {
+      margin-right: -56px;
+      margin-top: 9px;
+    }
+
+    @include mMax {
+      width: 52.53vw;
+      height: 58.66vw;
+      max-height: none;
+      max-width: none;
+      margin: 0 auto;
+      padding: 6.4vw 0 14.4vw;
+
+      // &:after {
+      //   content: '';
+      //   position: absolute;
+      //   bottom: 9vw;
+      //   display: block;
+      //   height: 8.8vw;
+      //   width: 83.46vw;
+      //   background: rgba(252, 102, 82, 0.54);
+      //   filter: blur(60px);
+      //   border-radius: 60%;
+      // }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -1.5vw;
+      display: block;
+      width: 31.83vw;
+      height: 35.54vw;
+
+      @include dMax {
+        display: none;
+      }
+    }
+
+    & > img.main_section-banner_img {
+      position: absolute;
+      display: block;
+      opacity: 0;
+      transition: transform 0.2s linear, opacity 0.2s linear;
+
+      &.is-active {
+        opacity: 1;
+      }
+
+      &:nth-child(1) {
+        top: -6.5vw;
+        width: 35vw;
+        max-width: 538px;
+        z-index: 0;
+        transition-delay: 0.3s, 0s;
+        transition-property: transform, opacity;
+
+        @include dMax {
+          top: -61px;
+        }
+
+        @include mMax {
+          top: 5.06vw;
+          width: 57.46vw;
+          left: 0vw;
+        }
+      }
+
+      &:nth-child(2) {
+        right: 1vw;
+        bottom: -3vw;
+        width: 19.9vw;
+        max-width: 306px;
+        z-index: 3;
+        transition-delay: 0.5s, 0s;
+        transition-property: transform, opacity;
+
+        @include mMax {
+          width: 33vw;
+          bottom: 20.13vw;
+          right: -1vw;
+        }
+
+        @include dMax {
+          right: 10px;
+          bottom: -80px;
+        }
+      }
+
+      &:nth-child(3) {
+        top: 3.8vw;
+        right: 2.5vw;
+        width: 8.46vw;
+        max-width: 130px;
+        z-index: 4;
+        transition-delay: 0.6s, 0s;
+        transition-property: transform, opacity;
+
+        @include mMax {
+          width: 13.86vw;
+          top: 21.86vw;
+          right: 1.9vw;
+        }
+
+        @include dMax {
+          top: 91px;
+          right: 32px;
+        }
+      }
+
+      &:nth-child(4) {
+        position: absolute;
+        display: block;
+        left: -5vw;
+        top: -9vw;
+        width: 32.5vw;
+        max-width: 500px;
+        z-index: 2;
+        transition-delay: 0.4s, 0s;
+        transition-property: transform, opacity;
+
+        @include mMax {
+          width: 53.13vw;
+          top: 1vw;
+          left: -6vw;
+        }
+
+        @include dMax {
+          top: -100px;
+          left: -73px;
+        }
+      }
+    }
+
+    &:hover {
+      @include dMin {
+        & > img.main_section-banner_img {
+          &:nth-child(3) {
+            transform: translate(20px, -20px);
+          }
+
+          &:nth-child(2) {
+            transform: translate(20px, 20px);
+          }
+
+          &:nth-child(4) {
+            transform: translate(-20px, -20px);
+          }
+        }
+      }
+    }
+  }
+
+  &-content {
+    box-sizing: border-box;
+    width: calc(100% - 31.96vw);
+    padding-right: 51px;
+    min-width: 60%;
+    max-width: 737px;
+    margin-right: auto;
+
+    @include test1 {
+      max-width: (46.87vw * 1.2);
+      padding-right: (3.32vw * 1.2);
+    }
+
+    h2 {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 42px;
+
+      @include test1 {
+        margin-bottom: (0.52vw * 1.2);
+        font-size: (2.08vw * 1.2);
+        line-height: (2.73vw * 1.2);
+      }
+    }
+
+    p {
+      display: block;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 32px;
+      color: #b4b4b4;
+
+      @include test1 {
+        font-size: (1.56vw * 1.2);
+        line-height: (2.08vw * 1.2);
+      }
+    }
+
+    @include mMax {
+      width: 100%;
+      padding-right: 0;
+
+      h2 {
+        text-align: center;
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+      }
+
+      p {
+        text-align: center;
+        font-size: 3.46vw;
+        line-height: 4.8vw;
+      }
+    }
+  }
+
+  &-btns {
+    width: calc(50% - 15px);
+    box-sizing: border-box;
+
+    &:first-child {
+      margin-right: 30px;
+
+      @include mMax {
+        margin-right: 0;
+      }
+    }
+
+    &_block {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 585px;
+      margin: 120px 0 0;
+
+      @include test1 {
+        max-width: (38.08vw * 1.2);
+        margin: (7.81vw * 1.2) 0 0;
+      }
+
+      @include mMax {
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+      }
+    }
+
+    p {
+      display: block;
+      margin-top: 13px;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 26px;
+      text-align: center;
+      color: #b6b6b6;
+
+      @include test1 {
+        margin-top: (0.84vw * 1.2);
+        font-size: (1.17vw * 1.2);
+        line-height: (1.69vw * 1.2);
+      }
+    }
+
+    @include mMax {
+      width: 100%;
+
+      &:nth-child(2) {
+        display: none;
+      }
+
+      .start-btn {
+        height: 14.93vw;
+        max-width: 75.73vw;
+        margin: 0 auto;
+        font-weight: normal;
+        font-size: 4.26vw;
+        line-height: 5.86vw;
+        padding-left: 15.73vw;
+        padding-right: 9.6vw;
+      }
+
+      p {
+        margin-top: 2.93vw;
+        font-size: 3.46vw;
+        line-height: 4.8vw;
+      }
+    }
+  }
+
+  &-next_btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 82px;
+    height: 98px;
+    margin-left: -41px;
+    margin-bottom: -49px;
+
+    @include test1 {
+      width: (5.33vw * 1.2);
+      height: (6.38vw * 1.2);
+      margin-left: (-2.66vw * 1.2);
+      margin-bottom: (-3.19vw * 1.2);
+    }
+
+    @include mMax {
+      bottom: -0.53vw;
+      width: 16.53vw;
+      height: 17.66vw;
+      margin-left: -8.26vw;
+      margin-bottom: -9.33vw;
+
+      img {
+        width: 4.26vw;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 2;
+      top: -1px;
+      display: block;
+      width: 100%;
+      height: 49px;
+      background: center / cover url(../img/border.svg) no-repeat;
+
+      @include test1 {
+        height: (3.19vw * 1.2);
+      }
+
+      @include mMax {
+        height: 8vw;
+        background: center / cover url(../img/border-mobile.svg) no-repeat;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 12px;
+      z-index: 1;
+      width: 62px;
+      height: 94px;
+      border-radius: 60px;
+      background-color: #fff;
+
+      @include test1 {
+        border-radius: (3.9vw * 1.2);
+        top: (0.78vw * 1.2);
+        width: (4.03vw * 1.2);
+        height: (6.119vw * 1.2);
+      }
+
+      @include mMax {
+        top: 1.06vw;
+        width: 12.8vw;
+        height: 19.73vw;
+      }
+    }
+
+    a {
+      position: absolute;
+      z-index: 3;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 54px;
+      height: 78px;
+      background: #ffffff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+      border-radius: 60px;
+
+      @include test1 {
+        width: (3.51vw * 1.2);
+        height: (5.07vw * 1.2);
+        border-radius: (3.9vw * 1.2);
+
+        img {
+          width: 1.04vw;
+        }
+      }
+
+      @include mMax {
+        width: 10.66vw;
+        height: 15.46vw;
+      }
+
+      img {
+        animation: 2s ease infinite drag;
+      }
+    }
+  }
+}
+
+@keyframes drag {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.steps_section {
+  position: relative;
+  padding-top: 111px;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @include test1 {
+    padding-top: (7.22vw * 1.2);
+  }
+
+  @include mMax {
+    padding-top: 29.6vw;
+  }
+
+  &-line {
+    display: block;
+    width: 64px;
+    height: 4px;
+    background: #fc6652;
+    border-radius: 20px;
+    margin: 0 auto;
+
+    @include test1 {
+      width: (4.16vw * 1.2);
+      height: (0.26vw * 1.2);
+      border-radius: (1.3vw * 1.2);
+    }
+
+    @include mMax {
+      display: none;
+    }
+  }
+
+  &-title {
+    &_wrap {
+      text-align: center;
+    }
+
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    width: 100%;
+    margin-top: 36px;
+    font-weight: 900;
+    font-size: 64px;
+    line-height: 72px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #494947;
+
+    @include test1 {
+      margin-top: (2.34vw * 1.2);
+      font-size: (4.16vw * 1.2);
+      line-height: (4.68vw * 1.2);
+    }
+
+    @include mMax {
+      margin-top: 0;
+      font-size: 5.33vw;
+      line-height: 5.33vw;
+    }
+
+    b {
+      color: #fc6652;
+    }
+
+    &:nth-child(2) {
+      z-index: 1;
+      transform: scale(1, -1);
+      margin-bottom: 0;
+      margin-top: -16px;
+      line-height: 48px;
+
+      @include test1 {
+        margin-top: (-1.04vw * 1.2);
+        line-height: (3.125vw * 1.2);
+      }
+
+      @include mMax {
+        margin-top: -1.56vw;
+        font-size: 5.33vw;
+        line-height: 5.33vw;
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: -1px;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 1) 50%,
+          rgba(255, 255, 255, 0.85) 100%
+        );
+      }
+    }
+  }
+}
+
+.video_block {
+  position: relative;
+  margin-top: 118px;
+
+  @include test1 {
+    margin-top: (7.68vw * 1.2);
+  }
+
+  @include mMax {
+    margin-top: 4vw;
+  }
+
+  &-figur {
+    position: absolute;
+    left: 50px;
+    bottom: -125px;
+    width: 291px;
+    height: 291px;
+
+    @include test1 {
+      left: (3.25vw * 1.2);
+      bottom: (-8.13vw * 1.2);
+      width: (18.94vw * 1.2);
+      height: (18.94vw * 1.2);
+    }
+
+    @include mMax {
+      display: none;
+    }
+
+    div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #fc6652;
+      opacity: 0.1;
+      border-radius: 34.2625px;
+      transform: rotate(-32.2deg);
+
+      @include test1 {
+        border-radius: (2.21vw * 1.2);
+      }
+
+      &:nth-child(2) {
+        margin-left: 7px;
+        margin-top: -37px;
+      }
+    }
+  }
+
+  h2 {
+    display: block;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 42px;
+    color: #555555;
+    margin-bottom: 39px;
+
+    @include test1 {
+      font-size: (2.08vw * 1.2);
+      line-height: (2.73vw * 1.2);
+      margin-bottom: (2.53vw * 1.2);
+    }
+
+    @include mMax {
+      margin-bottom: 1.86vw;
+      font-size: 4.8vw;
+      line-height: 6.4vw;
+    }
+  }
+
+  &-content_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @include mMax {
+      display: block;
+    }
+  }
+
+  &-content {
+    width: 57.33%;
+    border-radius: 20px;
+    box-shadow: 0px 30px 30px rgba(109, 94, 88, 0.25);
+
+    @include test1 {
+      border-radius: (1.3vw * 1.2);
+    }
+
+    @include mMax {
+      width: 100%;
+      margin-bottom: 4vw;
+    }
+  }
+
+  &-bar {
+    position: relative;
+    box-sizing: border-box;
+    width: 43.66%;
+    padding-left: 30px;
+
+    @include test1 {
+      padding-left: (1.95vw * 1.2);
+    }
+
+    @include mMax {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  &-number {
+    position: absolute;
+    top: -120px;
+    right: 32px;
+    z-index: 0;
+    max-width: 100%;
+
+    @include test1 {
+      width: (20.05vw * 1.2);
+      top: (-7.81vw * 1.2);
+      right: (2.08vw * 1.2);
+    }
+
+    @include mMax {
+      top: 0;
+      right: 0;
+      width: 50.1vw;
+    }
+  }
+
+  &-item {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    & + & {
+      margin-top: 20px;
+
+      @include test1 {
+        margin-top: (1.3vw * 1.2);
+      }
+
+      @include mMax {
+        margin-top: 2.13vw;
+      }
+    }
+
+    div {
+      position: relative;
+      flex-shrink: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 37%;
+      max-width: 175px;
+      border-radius: 20px;
+      box-shadow: 0px 30px 30px rgba(109, 94, 88, 0.25);
+
+      @include test1 {
+        max-width: (11.39vw * 1.2);
+        border-radius: (1.3vw * 1.2);
+
+        img:nth-child(2) {
+          width: 1.43vw;
+        }
+      }
+
+      @include mMax {
+        width: 28.8vw;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+
+        &:nth-child(2) {
+          position: absolute;
+
+          @include mMax {
+            width: 4.8vw;
+          }
+        }
+      }
+
+      span {
+        position: absolute;
+        right: 3px;
+        bottom: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 68px;
+        height: 21px;
+        background: rgba(4, 4, 4, 0.4);
+        backdrop-filter: blur(2px);
+        border-radius: 20px 0px;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 22px;
+        color: #ffffff;
+
+        @include test1 {
+          right: (0.19vw * 1.2);
+          bottom: (0.19vw * 1.2);
+          width: (4.42vw * 1.2);
+          height: (1.36vw * 1.2);
+          border-radius: (1.3vw * 1.2) 0;
+          font-size: (0.78vw * 1.2);
+          line-height: (1.43vw * 1.2);
+        }
+
+        @include mMax {
+          width: 11.2vw;
+          height: 3.46vw;
+          font-size: 1.86vw;
+          line-height: 3.73vw;
+        }
+      }
+    }
+
+    p {
+      display: block;
+      margin: 0;
+      margin-left: 30px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      color: #494947;
+
+      @include test1 {
+        margin-left: (1.95vw * 1.2);
+        font-size: (1.56vw * 1.2);
+        line-height: (2.08vw * 1.2);
+      }
+
+      @include mMax {
+        font-size: 4.26vw;
+        line-height: 5.86vw;
+        margin-left: 2.66vw;
+      }
+    }
+  }
+
+  &-bottom_item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 25px;
+
+    @include test1 {
+      margin-top: (1.62vw * 1.2);
+    }
+
+    @include mMax {
+      margin-top: 4vw;
+    }
+
+    svg {
+      display: block;
+      flex-shrink: 0;
+
+      @include test1 {
+        width: (3.19vw * 1.2);
+      }
+
+      @include mMax {
+        width: 8.53vw;
+      }
+    }
+
+    p {
+      display: block;
+      margin-left: 24px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      color: #494947;
+
+      @include test1 {
+        margin-left: (1.56vw * 1.2);
+        font-size: (1.56vw * 1.2);
+        line-height: (2.08vw * 1.2);
+      }
+
+      b {
+        font-weight: 700;
+        color: #fc6652;
+      }
+
+      @include mMax {
+        font-size: 4.26vw;
+        line-height: 5.86vw;
+        margin-left: 5.06vw;
+      }
+    }
+
+    &-svg {
+      animation: 2s ease infinite fade;
+    }
+  }
+
+  &-iframe {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-banner {
+    display: block;
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &-play {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27px;
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 10%;
+    margin-bottom: 10%;
+
+    @include test1 {
+      font-size: (1.3vw * 1.2);
+      line-height: (1.75vw * 1.2);
+    }
+
+    img {
+      display: block;
+      width: 224px;
+      transition: 0.2s;
+
+      @include test1 {
+        width: (14.58vw * 1.2);
+      }
+
+      @include mMax {
+        width: 29.86vw;
+      }
+    }
+
+    span {
+      display: block;
+      margin-left: -25px;
+      transition: 0.2s;
+
+      @include test1 {
+        margin-left: (-1.62vw * 1.2);
+      }
+
+      @include mMax {
+        font-weight: 400;
+        font-size: 3.46vw;
+        line-height: 4.8vw;
+        margin-left: -3.46vw;
+      }
+    }
+
+    &:hover {
+      @include dMin {
+        img {
+          transform: scale(1.1);
+        }
+
+        span {
+          transform: translateY(-10px);
+          text-shadow: 3px 4px 2px rgba(255, 255, 255, 0.5);
+        }
+      }
+    }
+  }
+
+  &-desc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 18px 37px 16px 30px;
+    background: #fdfdfd;
+    border-radius: 0 0 20px 20px;
+
+    span {
+      display: block;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      color: #494947;
+      margin-left: 42px;
+    }
+
+    @include test1 {
+      padding: (1.17vw * 1.2) (2.4vw * 1.2) (1.04vw * 1.2) (1.95vw * 1.2);
+      border-radius: 0 0 (1.3vw * 1.2) (1.3vw * 1.2);
+
+      span {
+        font-size: 1.56vw;
+        line-height: 2.08vw;
+        margin-left: 2.73vw;
+      }
+
+      img {
+        width: 3.84vw;
+      }
+    }
+
+    @include mMax {
+      padding: 2.4vw 2.93vw 2.13vw;
+      border-radius: 0 0 10px 10px;
+
+      img {
+        width: 7.73vw;
+      }
+
+      span {
+        font-size: 3.46vw;
+        line-height: 4.8vw;
+        margin-left: 5.33vw;
+      }
+    }
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.test_block {
+  position: relative;
+  padding-top: 298px;
+  padding-bottom: 65px;
+
+  @include test1 {
+    padding-top: (19.4vw * 1.2);
+    padding-bottom: (4.23vw * 1.2);
+  }
+
+  @include mMax {
+    padding-top: 21.33vw;
+    padding-bottom: 14.66vw;
+  }
+
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include mMax {
+      flex-direction: column;
+      padding-bottom: 26.66vw;
+    }
+  }
+  &-images {
+    position: relative;
+    width: 57.25%;
+    flex-shrink: 0;
+
+    @include mMax {
+      width: 100%;
+      order: 1;
+    }
+
+    .test_block-images_arrow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 46px;
+      margin-left: -42px;
+
+      @include test1 {
+        width: (2.99vw * 1.2);
+        margin-left: (-2.73vw * 1.2);
+      }
+
+      @include mMax {
+        width: 6.4vw;
+        margin-left: -5.33vw;
+      }
+
+      &-1 {
+        margin-top: -26px;
+
+        @include test1 {
+          margin-top: (-1.69vw * 1.2);
+        }
+
+        @include mMax {
+          margin-top: -3.46vw;
+        }
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: 124px;
+      width: calc(100% + 75px);
+      height: 459px;
+      opacity: 0.1;
+      border: 3px solid #fc6652;
+      box-sizing: border-box;
+      border-radius: 35px;
+
+      @include test1 {
+        top: (-1.95vw * 1.2);
+        left: (8.07vw * 1.2);
+        width: calc(100% + (4.88vw * 1.2));
+        height: (29.88vw * 1.2);
+        border-width: (0.19vw * 1.2);
+        border-radius: (2.27vw * 1.2);
+      }
+
+      @include mMax {
+        width: 65.86vw;
+        height: 50.93vw;
+        opacity: 0.1;
+        border: 0.27vw solid #fc6652;
+        left: 50%;
+        top: 50%;
+        margin-left: -32.8vw;
+        margin-top: -25vw;
+        box-sizing: border-box;
+        border-radius: 2.93vw;
+      }
+    }
+
+    &_heading {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      width: 100%;
+
+      h2 {
+        display: block;
+        max-width: 245px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 27px;
+        line-height: 35px;
+        color: #555555;
+
+        @include test1 {
+          max-width: (15.95vw * 1.2);
+          font-size: (1.75vw * 1.2);
+          line-height: (2.27vw * 1.2);
+        }
+
+        @include mMax {
+          max-width: 33.33vw;
+          font-size: 3.46vw;
+          line-height: 4.53vw;
+        }
+      }
+    }
+
+    &_logo {
+      width: 100%;
+      max-width: 314px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+
+      @include test1 {
+        max-width: (20.44vw * 1.2);
+
+        img {
+          width: 2.14vw;
+        }
+      }
+
+      span {
+        display: block;
+        margin-left: 8px;
+        font-weight: 900;
+        font-size: 27px;
+        line-height: 34px;
+        color: #494947;
+
+        @include test1 {
+          margin-left: (0.52vw * 1.2);
+          font-size: (1.75vw * 1.2);
+          line-height: (2.21vw * 1.2);
+        }
+      }
+
+      @include mMax {
+        max-width: 42.66vw;
+
+        img {
+          width: 4.26vw;
+        }
+
+        span {
+          font-size: 3.46vw;
+          line-height: 4.53vw;
+        }
+      }
+    }
+
+    &_content {
+      position: relative;
+
+      img {
+        display: block;
+        width: calc(100% + 68px);
+        margin: 0 -34px;
+
+        @include test1 {
+          width: calc(100% + (4.42vw * 1.2));
+          margin: 0 (-2.21vw * 1.2);
+        }
+
+        @include mMax {
+          margin: 0 -4vw;
+          width: calc(100% + 8vw);
+        }
+      }
+    }
+  }
+
+  &-desc {
+    position: relative;
+    display: block;
+    width: calc(31.66% + 10px);
+    box-sizing: border-box;
+    padding-left: 10px;
+    margin-left: auto;
+
+    @include test1 {
+      width: calc(31.66% + (0.65vw * 1.2));
+      padding-left: (0.65vw * 1.2);
+    }
+
+    @include mMax {
+      position: static;
+      width: 100%;
+      padding-left: 0;
+    }
+
+    h2 {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-bottom: 24px;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 42px;
+      color: #494947;
+
+      @include test1 {
+        margin-bottom: (1.56vw * 1.2);
+        font-size: (2.08vw * 1.2);
+        line-height: (2.73vw * 1.2);
+      }
+
+      @include mMax {
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+        margin-bottom: 4.26vw;
+      }
+    }
+
+    p {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-bottom: 24px;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      color: #555555;
+
+      @include test1 {
+        margin-bottom: (1.56vw * 1.2);
+        font-size: (1.56vw * 1.2);
+        line-height: (2.08vw * 1.2);
+      }
+
+      @include mMax {
+        font-size: 3.46vw;
+        line-height: 4.8vw;
+        margin-bottom: 4.26vw;
+      }
+    }
+
+    a {
+      position: relative;
+      z-index: 1;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 84px;
+      padding: 5px 36px 5px 64px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 32px;
+      color: #ffffff;
+      text-decoration: none;
+      background: #fc6652;
+      box-shadow: 0px 20px 30px rgba(66, 44, 34, 0.33);
+      border-radius: 100px;
+      border: 2px solid #fc6652;
+      transition: 0.2s;
+
+      span {
+        display: block;
+        margin-right: auto;
+        padding-right: 10px;
+      }
+
+      b {
+        flex-shrink: 0;
+        display: block;
+        width: 64px;
+        height: 45px;
+        background: center / cover url(../img/link-icon1.svg) no-repeat;
+      }
+
+      @include test1 {
+        height: (5.46vw * 1.2);
+        padding: (0.32vw * 1.2) (2.34vw * 1.2) (0.32vw * 1.2) (4.16vw * 1.2);
+        border-radius: (6.51vw * 1.2);
+        font-size: (1.56vw * 1.2);
+        line-height: (2.08vw * 1.2);
+
+        span {
+          padding-right: 0.65vw;
+        }
+
+        b {
+          width: 4.16vw;
+          height: 2.92vw;
+        }
+      }
+
+      &:hover {
+        @include dMin {
+          background: #ffffff;
+
+          span {
+            color: #fc6652;
+          }
+
+          b {
+            background: center / cover url(../img/link-icon2.svg) no-repeat;
+          }
+        }
+      }
+
+      @include mMax {
+        height: 14.93vw;
+        max-width: 65.33vw;
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+        padding-left: 9.06vw;
+        padding-right: 6.93vw;
+        left: 50%;
+        transform: translateX(-50%);
+
+        b {
+          height: 6.66vw;
+          width: 9.6vw;
+        }
+      }
+
+      @include mMax {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+
+  &-number {
+    position: absolute;
+    top: -130px;
+    left: 0;
+    max-width: 100%;
+    z-index: 0;
+
+    @include test1 {
+      top: (-8.46vw * 1.2);
+      width: (25.32vw * 1.2);
+    }
+
+    @include mMax {
+      top: -6.93vw;
+      right: -2.66vw;
+      left: auto;
+      width: 60vw;
+    }
+  }
+
+  &-figur {
+    position: absolute;
+    top: 0;
+    right: -210px;
+    display: block;
+    width: 244px;
+    height: 244px;
+    background: #ffeeec;
+    border-radius: 44px;
+    transform: rotate(30deg);
+
+    @include mMax {
+      display: none;
+    }
+  }
+}
+
+.situation_block {
+  position: relative;
+  padding-top: 167px;
+  padding-bottom: 199px;
+
+  @include test1 {
+    padding-top: (10.87vw * 1.2);
+    padding-bottom: (12.95vw * 1.2);
+  }
+
+  @include mMax {
+    padding-top: 14.66vw;
+    padding-bottom: 48vw;
+  }
+
+  h2 {
+    display: block;
+    margin-bottom: 46px;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 42px;
+    color: #555555;
+
+    @include test1 {
+      margin-bottom: (2.99vw * 1.2);
+      font-size: (2.08vw * 1.2);
+      line-height: (2.73vw * 1.2);
+    }
+
+    @include mMax {
+      margin-bottom: 6.4vw;
+      font-size: 4.8vw;
+      line-height: 6.4vw;
+    }
+  }
+
+  &-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin-bottom: -32px;
+
+    @include test1 {
+      margin-bottom: (-2.08vw * 1.2);
+    }
+
+    @include mMax {
+      display: block;
+      margin-bottom: -3.2vw;
+    }
+  }
+
+  &-item {
+    position: relative;
+    z-index: 2;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 9px 19px 9px 32px;
+    width: calc(50% - 15px);
+    margin-bottom: 32px;
+    background: transparent;
+    box-shadow: 0px 0px 20px rgba(67, 45, 36, 0.25);
+    border-radius: 20px;
+    transition: 0.2s;
+    text-decoration: none;
+
+    @include test1 {
+      padding: (0.58vw * 1.2) (1.23vw * 1.2) (0.58vw * 1.2) (2.08vw * 1.2);
+      margin-bottom: (2.08vw * 1.2);
+      box-shadow: 0px 0px (1.3vw * 1.2) rgba(67, 45, 36, 0.25);
+      border-radius: (1.3vw * 1.2);
+    }
+
+    @include mMax {
+      width: 100%;
+      padding: 0.8vw 3.46vw 0.8vw 4.8vw;
+      margin-bottom: 3.2vw;
+      background: right bottom / auto 100% url(../img/mobile-figur-bg.png) no-repeat;
+    }
+
+    &:nth-child(2n - 1) {
+      margin-right: 30px;
+    }
+
+    img {
+      display: block;
+      width: 43.48%;
+      flex-shrink: 0;
+      filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+    }
+
+    .video_mac{
+      display: contents;
+      width: 43.48%;
+      flex-shrink: 0;
+      filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+    }
+
+    p {
+      display: block;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      color: #555555;
+
+      @include test1 {
+        font-size: (1.56vw * 1.2);
+        line-height: (2.08vw * 1.2);
+      }
+
+      @include mMax {
+        max-width: 43.2vw;
+        font-size: 3.46vw;
+        line-height: 4.8vw;
+        margin-right: auto;
+      }
+    }
+
+    span:nth-child(1) {
+      position: absolute;
+      top: 0;
+      display: block;
+      width: 71px;
+      height: 12px;
+      background: #fc6652;
+      border-radius: 0px 0px 20px 20px;
+
+      @include test1 {
+        width: (4.62vw * 1.2);
+        height: (0.78vw * 1.2);
+        border-radius: 0px 0px (1.3vw * 1.2) (1.3vw * 1.2);
+      }
+
+      @include mMax {
+        width: 10.93vw;
+        height: 1.86vw;
+        border-radius: 0px 0px 2.93vw 2.93vw;
+      }
+    }
+
+    &:hover {
+      @include dMin {
+        transform: translateY(-20px);
+      }
+
+      @include test1 {
+        transform: translateY((-1.3vw * 1.2));
+      }
+    }
+  }
+
+  &-figur-1 {
+    position: absolute;
+    top: 0;
+    left: -390px;
+    width: 422px;
+    height: 422px;
+    background: #fc6652;
+    opacity: 0.2;
+    border-radius: 47px;
+    transform: rotate(30deg);
+
+    @include test1 {
+      width: (27.47vw * 1.2);
+      width: (27.47vw * 1.2);
+      border-radius: (3.05vw * 1.2);
+      left: (-25.39vw * 1.2);
+    }
+
+    @include mMax {
+      display: none;
+    }
+  }
+
+  &-figur-2 {
+    position: absolute;
+    bottom: 117px;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    width: 456px;
+    height: 456px;
+    margin-left: -258px;
+    border: 2px solid #ffe3dd;
+    box-sizing: border-box;
+    border-radius: 50px;
+    transform: rotate(24.48deg);
+
+    @include test1 {
+      width: (29.68vw * 1.2);
+      height: (29.68vw * 1.2);
+      border-radius: (3.25vw * 1.2);
+      margin-left: (-16.79vw * 1.2);
+      bottom: (7.61vw * 1.2);
+      border-width: (0.13vw * 1.2);
+    }
+
+    @include mMax {
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      background: #ffe3dd;
+      border-radius: 46px;
+      width: 408px;
+      height: 408px;
+
+      @include test1 {
+        border-radius: (2.99vw * 1.2);
+        width: (26.56vw * 1.2);
+        height: (26.56vw * 1.2);
+      }
+    }
+  }
+
+  &-figur-3 {
+    position: absolute;
+    box-sizing: border-box;
+    right: -500px;
+    bottom: -200px;
+    width: 560px;
+    height: 560px;
+    opacity: 0.2;
+    border: 2px solid #862e22;
+    box-sizing: border-box;
+    border-radius: 62px;
+    transform: rotate(55.75deg);
+
+    @include test1 {
+      right: (-32.55vw * 1.2);
+      bottom: (-13.02vw * 1.2);
+      width: (36.45vw * 1.2);
+      height: (36.45vw * 1.2);
+      border-width: (0.13vw * 1.2);
+      border-radius: (4.03vw * 1.2);
+    }
+
+    @include mMax {
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      background: #fc6652;
+      border-radius: 62px;
+      height: 560px;
+      height: 560px;
+      margin-left: 45px;
+      margin-top: -45px;
+
+      @include test1 {
+        border-radius: (4.03vw * 1.2);
+        height: (36.45vw * 1.2);
+        width: (36.45vw * 1.2);
+        margin-left: (2.92vw * 1.2);
+        margin-top: (-2.92vw * 1.2);
+      }
+    }
+  }
+}
+
+.evacuation_block {
+  position: relative;
+  z-index: 2;
+  margin-top: -97px;
+
+  @include test1 {
+    margin-top: (-6.31vw * 1.2);
+  }
+
+  @include mMax {
+    margin-top: -20.66vw;
+  }
+
+  &-wrap {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 232px;
+
+    @include test1 {
+      min-height: (15.1vw * 1.2);
+    }
+
+    @include mMax {
+      height: 81.06vw;
+      display: block;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+      background: radial-gradient(
+          10.27% 63.91% at 50% 50%,
+          rgba(252, 102, 82, 0.43) 0%,
+          rgba(252, 102, 82, 0) 100%
+        ),
+        linear-gradient(180deg, #17181e 0%, #13151c 100%);
+      box-shadow: 0px 0px 20px rgba(140, 140, 140, 0.35), 0px 10px 20px rgba(55, 46, 43, 0.16);
+      border-radius: 20px;
+      filter: drop-shadow(0px 10px 50px rgba(255, 95, 73, 0.29));
+
+      @include test1 {
+        border-radius: (1.3vw * 1.2);
+      }
+
+      @include mMax {
+        width: 100%;
+        background: linear-gradient(149.9deg, #1a1b22 6.07%, #181b27 63.71%), #fafafa;
+        box-shadow: 0px 10px 20px rgba(55, 46, 43, 0.16);
+        border-radius: 5.33vw;
+      }
+    }
+  }
+
+  &-content {
+    position: relative;
+    box-sizing: border-box;
+    width: 60%;
+    padding: 45px 27.5% 38px 34px;
+
+    @include test1 {
+      padding: (2.92vw * 1.2) 27.5% (2.47vw * 1.2) (2.21vw * 1.2);
+    }
+
+    @include mMax {
+      width: 100%;
+      padding: 5.33vw 4.26vw;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      display: block;
+      margin-bottom: 21px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 32px;
+      text-transform: uppercase;
+      color: #ffffff;
+
+      @include test1 {
+        margin-bottom: (1.36vw * 1.2);
+        font-size: (1.56vw * 1.2);
+        line-height: (2.08vw * 1.2);
+      }
+
+      @include mMax {
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+        margin-bottom: 2.13vw;
+      }
+    }
+
+    p {
+      display: block;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      color: #ffffff;
+
+      @include test1 {
+        max-width: (23.17vw * 1.2);
+        font-size: (1.56vw * 1.2);
+        line-height: (2.08vw * 1.2);
+      }
+
+      @include mMax {
+        position: relative;
+        z-index: 2;
+        font-size: 3.46vw;
+        line-height: 4.8vw;
+        max-width: 40vw;
+      }
+    }
+
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 4px;
+      display: block;
+      width: 44%;
+
+      @include test1 {
+        right: (0.26vw * 1.2);
+      }
+
+      @include mMax {
+        bottom: auto;
+        top: -8.13vw;
+        width: 42.66vw;
+        filter: drop-shadow(0px -5px 8.81218px rgba(244, 97, 77, 0.3));
+      }
+    }
+  }
+
+  &-more {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    border-radius: 0 20px 20px 0;
+    overflow: hidden;
+    background: #fc6652;
+    clip-path: polygon(19% 0%, 100% 0, 100% 100%, 0% 100%);
+
+    @include test1 {
+      border-radius: 0 (1.3vw * 1.2) (1.3vw * 1.2) 0;
+    }
+
+    @include mMax {
+      margin-top: -4.26vw;
+      width: 100%;
+      height: calc(100% - 24vw);
+      border-radius: 0 0 5.33vw 5.33vw;
+      clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+  &-number {
+    position: absolute;
+    right: 5px;
+
+    @include test1 {
+      right: (0.32vw * 1.2);
+      width: (22.18vw * 1.2);
+    }
+
+    @include mMax {
+      width: 68vw;
+      right: -4vw;
+      bottom: -1.33vw;
+    }
+  }
+
+  &-link {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 15px 0 26px;
+    min-height: 70px;
+    background: #ffffff;
+    box-shadow: 0px 8px 17px rgba(66, 44, 34, 0.19);
+    border-radius: 65px;
+    text-decoration: none;
+    transition: 0.2s;
+
+    span {
+      display: block;
+      max-width: 98%;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 30px;
+      color: #fc6652;
+      padding-right: 10px;
+      margin-right: auto;
+    }
+
+    @include test1 {
+      min-height: (4.55vw * 1.2);
+      padding: 0 (0.97vw * 1.2) 0 (1.69vw * 1.2);
+      border-radius: (4.23vw * 1.2);
+
+      span {
+        font-size: (1.43vw * 1.2);
+        line-height: (1.95vw * 1.2);
+        padding-right: (0.65vw * 1.2);
+      }
+
+      img {
+        width: (2.73vw * 1.2);
+      }
+    }
+
+    @include mMax {
+      min-height: 14.93vw;
+      max-width: calc(100% - 13.33vw);
+      width: 78.93vw;
+      margin: 0 auto;
+      padding-left: 6.66vw;
+      padding-right: 4.8vw;
+      margin-top: 9.06vw;
+
+      span {
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+      }
+
+      img {
+        width: 8.53vw;
+      }
+    }
+
+    &:hover {
+      @include dMin {
+        margin-top: -10px;
+      }
+    }
+  }
+}
+
+.bottom_section {
+  position: relative;
+  z-index: 1;
+  margin-top: -106px;
+  box-sizing: border-box;
+  padding-top: 349px;
+  background: radial-gradient(39.55% 20.73% at 109.9% 70.38%, #771e12 0%, rgba(69, 43, 20, 0) 100%),
+    radial-gradient(34.24% 11.01% at 47.69% 104.02%, #8a2e21 0%, rgba(69, 43, 20, 0) 100%),
+    linear-gradient(180deg, #15161e 3.65%, #0c0d11 102.18%);
+
+  @include test1 {
+    margin-top: (-6.9vw * 1.2);
+    padding-top: (22.72vw * 1.2);
+  }
+
+  @include mMax {
+    margin-top: -48vw;
+    padding-top: 93.06vw;
+    background: radial-gradient(42.4% 5.83% at 106.8% 67.93%, #771e12 0%, rgba(69, 43, 20, 0) 100%),
+      radial-gradient(38.64% 3.26% at 47.69% 100.69%, #8a2e21 0%, rgba(69, 43, 20, 0) 100%),
+      linear-gradient(180deg, #15161e 0.96%, #0c0d11 26.82%);
+  }
+
+  &-figur_wrapper {
+    position: absolute;
+    top: -393px;
+    z-index: 2;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+
+    @include test1 {
+      top: (-25.58vw * 1.2);
+    }
+
+    .situation_block-figur-3 {
+      top: 0;
+      bottom: auto;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 26px;
+    background-color: #fff;
+
+    @media screen and (min-width: 2001px) {
+      display: none;
+    }
+  }
+
+  &-top_image {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+
+    &-2 {
+      top: 0;
+      height: 26px;
+      object-fit: cover;
+      object-position: top;
+      opacity: 0.97;
+
+      @media screen and (min-width: 2001px) {
+        display: none;
+      }
+    }
+
+    @include mMax {
+      &-descktop {
+        display: none;
+      }
+    }
+
+    &-mobile {
+      display: none;
+
+      @include mMax {
+        display: block;
+      }
+    }
+  }
+}
+
+.metrix {
+  position: relative;
+  z-index: 9;
+  padding-bottom: 326px;
+  padding-top: 160px;
+  margin-top: -160px;
+  overflow: hidden;
+
+  @include test1 {
+    padding-bottom: (21.22vw * 1.2);
+    padding-top: (10.41vw * 1.2);
+    margin-top: (-10.41vw * 1.2);
+  }
+
+  @include mMax {
+    padding-bottom: 31.2vw;
+    padding-top: 0;
+  }
+
+  .container {
+    max-width: 1200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include mMax {
+      display: block;
+    }
+  }
+
+  &-content {
+    position: relative;
+    width: calc(100% - 42.31vw);
+    min-width: 49%;
+    margin-top: -50px;
+    max-width: calc(100% - 650px);
+
+    @include test1 {
+      margin-top: (-3.25vw * 1.2);
+      max-width: (38.28vw * 1.2);
+      min-width: (1px * 1.2);
+      margin-right: auto;
+    }
+
+    @include mMax {
+      margin-top: 25.6vw;
+      width: 100%;
+      max-width: none;
+
+      .metrix-content_btn {
+        margin-top: 5.33vw;
+      }
+    }
+
+    &_btn {
+      position: relative;
+      margin-top: 41px;
+
+      @include test1 {
+        margin-top: (2.66vw * 1.2);
+      }
+    }
+
+    h2 {
+      display: block;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 42px;
+      color: #ffffff;
+      margin-bottom: 38px;
+
+      @include test1 {
+        font-size: (2.08vw * 1.2);
+        line-height: (2.73vw * 1.2);
+        margin-bottom: (2.47vw * 1.2);
+      }
+
+      @include mMax {
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+        margin-bottom: 4.26vw;
+      }
+    }
+
+    P {
+      display: block;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      color: #c4c4c4;
+
+      @include test1 {
+        font-size: (1.56vw * 1.2);
+        line-height: (2.08vw * 1.2);
+      }
+
+      @include mMax {
+        font-size: 3.46vw;
+        line-height: 4.8vw;
+      }
+
+      & + p {
+        margin-top: 16px;
+
+        @include test1 {
+          margin-top: (1.04vw * 1.2);
+        }
+
+        @include mMax {
+          margin-top: 2.13vw;
+        }
+      }
+    }
+
+    a {
+      position: absolute;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 84px;
+      padding: 0 45px 0 60px;
+      background: #fc6652;
+      box-shadow: 0px 15px 22px rgba(66, 44, 34, 0.33);
+      border-radius: 100px;
+      width: 100%;
+      max-width: 380px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 32px;
+      text-decoration: none;
+      color: #ffffff;
+      filter: drop-shadow(0px 20px 100px #ac3829);
+      transition: 0.2s;
+
+      @include test1 {
+        min-height: (5.46vw * 1.2);
+        padding: 0 (2.9vw * 1.2) 0 (3.9vw * 1.2);
+        border-radius: (6.51vw * 1.2);
+        max-width: (24.73vw * 1.2);
+        font-size: (1.56vw * 1.2);
+        line-height: (2.08vw * 1.2);
+
+        img {
+          width: (2.4vw * 1.2);
+        }
+      }
+
+      @include mMax {
+        position: relative;
+        min-height: 14.93vw;
+        max-width: 65.33vw;
+        margin: 0 auto;
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+        padding-left: 6.66vw;
+        padding-right: 5.86vw;
+        img {
+          width: 5.86vw;
+        }
+      }
+
+      span {
+        display: block;
+        margin-right: auto;
+      }
+
+      &:hover {
+        @include dMin {
+          margin-top: -15px;
+        }
+      }
+    }
+  }
+
+  &-number {
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    top: -84px;
+    right: 80px;
+
+    @include test1 {
+      top: (-5.46vw * 1.2);
+      right: (5.2vw * 1.2);
+      width: (23.3vw * 1.2);
+    }
+
+    @include mMax {
+      width: 68vw;
+      right: 0;
+      top: 14.66vw;
+    }
+  }
+
+  &-mobile_grafic {
+    display: none;
+
+    @include mMax {
+      display: block;
+      width: calc(100% + 32px);
+      margin-left: -16px;
+    }
+  }
+
+  &-grafic {
+    position: relative;
+    width: 42.31vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 650px;
+    margin-top: 50px;
+
+    @include dMax {
+      max-height: 505px;
+    }
+
+    @include mMax {
+      display: none;
+    }
+
+    &-img {
+      position: absolute;
+      display: block;
+      transition: opacity 0.2s linear;
+
+      &1 {
+        width: 25.13vw;
+        top: -2vw;
+        left: 0;
+        max-width: 386px;
+
+        @include dMax {
+          top: -30px;
+        }
+      }
+
+      &2 {
+        filter: drop-shadow(0px 8.2659px 16.5318px rgba(114, 103, 103, 0.78));
+        width: 18.61vw;
+        top: -2vw;
+        right: 7vw;
+        max-width: 286px;
+
+        @include dMax {
+          top: -30px;
+          right: 138px;
+        }
+      }
+
+      &3 {
+        bottom: 0.5vw;
+        right: 2vw;
+        filter: drop-shadow(0px 0px 14.9047px rgba(134, 111, 103, 0.51));
+        width: 21.03vw;
+        max-width: 315px;
+
+        @include dMax {
+          bottom: 7px;
+          right: 100px;
+        }
+      }
+
+      &4 {
+        width: 52.08vw;
+        left: 2vw;
+        top: 5.5vw;
+        max-width: 800px;
+
+        @include dMax {
+          left: 30px;
+          top: 84px;
+        }
+      }
+    }
+  }
+
+  &-grafic_figur {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32.87vw;
+    height: 32.87vw;
+    opacity: 0.2;
+    border: 2px solid #fc6652;
+    box-sizing: border-box;
+    border-radius: 59px;
+    transform: rotate(-20deg);
+    max-width: 648px;
+    max-height: 648px;
+
+    &:before {
+      content: '';
+      display: block;
+      background: #fc6652;
+      border-radius: 50px;
+      width: 90%;
+      height: 90%;
+    }
+  }
+}
+
+.exclusive {
+  padding-bottom: 124px;
+
+  @include test1 {
+    padding-bottom: (8.07vw * 1.2);
+  }
+
+  @include mMax {
+    padding-bottom: 10.66vw;
+  }
+
+  &-mobile_mac {
+    display: none;
+
+    @include mMax {
+      display: block;
+
+      img {
+        display: block;
+        width: 100%;
+        margin-left: -4.26vw;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include mMax {
+      display: block;
+    }
+  }
+
+  &-title {
+    position: relative;
+    display: block;
+    font-weight: 800;
+    font-size: 38px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #fc6652;
+    margin-bottom: 47px;
+
+    @include test1 {
+      font-size: (2.47vw * 1.2);
+      line-height: (1.3vw * 1.2);
+      margin-bottom: (3.05vw * 1.2);
+    }
+
+    @include mMax {
+      font-size: 8.53vw;
+      line-height: 8.53vw;
+      margin-bottom: 4.8vw;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -16px;
+      bottom: 12px;
+      z-index: 0;
+      display: block;
+      width: 80px;
+      height: 73px;
+      background: center / cover url(../img/ex-bef.svg) no-repeat;
+
+      @include test1 {
+        left: (-1.04vw * 1.2);
+        bottom: (0.78vw * 1.2);
+        width: (5.2vw * 1.2);
+        height: (4.75vw * 1.2);
+      }
+
+      @include mMax {
+        width: 14.93vw;
+        height: 13.33vw;
+        bottom: 4vw;
+        left: -1.66vw;
+      }
+    }
+  }
+
+  &-content {
+    position: relative;
+    box-sizing: border-box;
+    width: calc(100% - 39vw);
+    min-width: 48.75%;
+    padding-left: 15px;
+
+    @include test1 {
+      padding-left: (0.97vw * 1.2);
+      max-width: (38.08vw * 1.2);
+      margin-left: auto;
+      min-width: 1px;
+    }
+
+    @include mMax {
+      width: 100%;
+      padding-left: 0;
+    }
+
+    h2 {
+      display: block;
+      margin-bottom: 32px;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 42px;
+      color: #ffffff;
+
+      @include test1 {
+        margin-bottom: (2.08vw * 1.2);
+        font-size: (2.08vw * 1.2);
+        line-height: (2.73vw * 1.2);
+      }
+
+      @include mMax {
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+        margin-bottom: 4.26vw;
+      }
+    }
+
+    p {
+      display: block;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      color: #c4c4c4;
+
+      @include test1 {
+        font-size: (1.56vw * 1.2);
+        line-height: (2.73vw * 1.2);
+      }
+
+      & + p {
+        margin-top: 16px;
+
+        @include test1 {
+          margin-top: (1.04vw * 1.2);
+        }
+
+        @include mMax {
+          margin-top: 2.13vw;
+        }
+      }
+
+      @include mMax {
+        font-size: 3.46vw;
+        line-height: 4.8vw;
+      }
+    }
+
+    .metrix-content_btn {
+      min-height: 94px;
+
+      @include test1 {
+        min-height: (6.11vw * 1.2);
+      }
+
+      @include mMax {
+        margin-top: -4vw;
+        min-height: 14.93vw;
+        width: 100%;
+      }
+    }
+
+    a {
+      position: absolute;
+      min-height: 94px;
+      max-width: 453px;
+      box-shadow: 0px 20px 100px #ac3829;
+
+      @include test1 {
+        min-height: (6.11vw * 1.2);
+        max-width: (29.49vw * 1.2);
+      }
+
+      @include mMax {
+        position: relative;
+        min-height: 14.93vw;
+        padding-left: 10.66vw;
+        padding-right: 7.2vw;
+        max-width: 91.46vw;
+        margin: 0 auto;
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+
+        img {
+          width: 9.06vw;
+        }
+      }
+
+      &:hover {
+        @include dMin {
+          margin-top: -15px;
+        }
+      }
+    }
+  }
+
+  &-btn {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 5px 35px 5px 35px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    text-decoration: none;
+    color: #ffffff;
+    background: #fc6652;
+    border-radius: 100px;
+    transition: 0.2s;
+
+    @include test1 {
+      padding: (0.32vw * 1.2) (2.27vw * 1.2);
+      font-size: (1.56vw * 1.2);
+      line-height: (2.08vw * 1.2);
+
+      img {
+        width: 3.19vw;
+      }
+    }
+
+    span {
+      display: block;
+      margin-right: auto;
+      padding-right: 5px;
+
+      @include test1 {
+        padding-right: (0.32vw * 1.2);
+      }
+    }
+  }
+
+  &-number {
+    position: absolute;
+    top: 145px;
+    right: 20px;
+    display: block;
+    max-width: 100%;
+
+    @include test1 {
+      top: (9.44vw * 1.2);
+      right: (1.3vw * 1.2);
+      width: (30.07vw * 1.2);
+    }
+
+    @include mMax {
+      width: 68vw;
+      right: 0;
+      top: 28.26vw;
+    }
+  }
+
+  &-mac {
+    position: relative;
+    width: 39vw;
+    height: 36.32vw;
+    max-width: 599px;
+    max-height: 558px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mMax {
+      display: none;
+    }
+
+    &-bg {
+      position: absolute;
+      margin-top: -50px;
+      right: 85px;
+      display: block;
+      height: 352px;
+
+      @include test1 {
+        margin-top: (-3.25vw * 1.2);
+        right: (5.53vw * 1.2);
+        height: (22.91vw * 1.2);
+      }
+    }
+
+    &_img {
+      position: absolute;
+      display: block;
+      transition: transform 0.2s linear;
+
+      &1 {
+        left: 2.5vw;
+        top: 1vw;
+        z-index: 2;
+        width: 24.5vw;
+        max-width: 376px;
+
+        @include dMax {
+          left: 39px;
+          top: 23px;
+        }
+      }
+
+      &2 {
+        top: -3vw;
+        right: 11.2vw;
+        z-index: 3;
+        width: 10.45vw;
+        max-width: 161px;
+
+        @include dMax {
+          top: -46px;
+          right: 172px;
+        }
+      }
+
+      &3 {
+        top: 2.5vw;
+        right: 2.5vw;
+        z-index: 1;
+        width: 34.37vw;
+        max-width: 528px;
+        filter: drop-shadow(0px 20px 100px rgba(172, 56, 41, 0.44));
+
+        @include dMax {
+          top: 47px;
+          left: 29px;
+        }
+      }
+    }
+
+    &:hover {
+      .exclusive-mac_img1 {
+        transform: translate(10px, -10px);
+      }
+
+      .exclusive-mac_img2 {
+        transform: translate(20px, -20px);
+      }
+    }
+  }
+}
+
+.novelty {
+  padding-top: 38px;
+  padding-bottom: 228px;
+  overflow: hidden;
+
+  @include test1 {
+    padding-top: (4.47vw * 1.2);
+    padding-bottom: (14.84vw * 1.2);
+  }
+
+  @include mMax {
+    padding-top: 10.66vw;
+    padding-bottom: 21.33vw;
+  }
+
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    @include mMax {
+      display: block;
+      padding-bottom: 23.46vw;
+    }
+  }
+
+  &-content {
+    position: relative;
+    width: calc(100% - 33.33vw);
+    min-width: 57.3%;
+    min-height: 391px;
+    margin-top: 45px;
+
+    @include test1 {
+      margin-top: (2.92vw * 1.2);
+      min-width: 1px;
+      max-width: (44.79vw * 1.2);
+      margin-right: auto;
+      min-height: (25.45vw * 1.2);
+    }
+
+    @include mMax {
+      margin-top: 0;
+      position: static;
+      width: 100%;
+      min-height: 1px;
+
+      .metrix-content_btn {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
+    h2 {
+      display: block;
+      margin-bottom: 16px;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 42px;
+      color: #ffffff;
+
+      @include test1 {
+        margin-bottom: (1.04vw * 1.2);
+        font-size: (2.08vw * 1.2);
+        line-height: (2.73vw * 1.2);
+      }
+
+      @include mMax {
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+        margin-bottom: 2.13vw;
+      }
+    }
+
+    p {
+      display: block;
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      color: #ffffff;
+
+      @include test1 {
+        font-size: (1.56vw * 1.2);
+        line-height: (2.08vw * 1.2);
+      }
+
+      @include mMax {
+        font-size: 3.46vw;
+        line-height: 4.8vw;
+        color: #c4c4c4;
+
+        br {
+          display: none;
+        }
+      }
+    }
+
+    .metrix-content_btn {
+      height: 83px;
+
+      @include test1 {
+        height: (5.4vw * 1.2);
+      }
+
+      @include mMax {
+        width: 100%;
+        height: 14.93vw;
+      }
+    }
+
+    a {
+      min-height: 83px;
+      max-width: 380px;
+      padding-left: 73px;
+      padding-right: 60px;
+      box-shadow: 0px 15px 22px rgba(252, 102, 82, 0.22);
+
+      @include test1 {
+        min-height: (5.4vw * 1.2);
+        max-width: (24.73vw * 1.2);
+        padding-left: (4.75vw * 1.2);
+        padding-right: (3.9vw * 1.2);
+
+        img {
+          width: 2.08vw;
+        }
+      }
+
+      @include mMax {
+        min-height: 14.93vw;
+        max-width: 65.33vw;
+        margin: 0 auto;
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+        padding-left: 10.13vw;
+        padding-right: 9.06vw;
+
+        img {
+          display: block;
+          width: 6.93vw;
+        }
+      }
+
+      &:hover {
+        @include dMin {
+          position: absolute;
+          margin-top: -15px;
+        }
+      }
+    }
+  }
+
+  &-mobile_steps {
+    display: none;
+    @include mMax {
+      display: block;
+      width: 100%;
+      padding: 9.06vw 0 8.53vw;
+    }
+  }
+
+  &-steps {
+    position: relative;
+    width: 33.33vw;
+    height: 41.01vw;
+    max-width: 512px;
+    max-height: 630px;
+    flex-shrink: 0;
+    margin-top: -30px;
+    margin-right: 33px;
+
+    @include test1 {
+      margin-top: (-2.92vw * 1.2);
+      margin-right: (8.14vw * 1.2);
+    }
+
+    @include mMax {
+      display: none;
+    }
+
+    &-bg {
+      position: absolute;
+      width: 49.41vw;
+      max-width: 759px;
+    }
+  }
+
+  &-img {
+    position: absolute;
+    display: block;
+    transition: opacity 0.2s linear;
+
+    &-1 {
+      width: 13.8vw;
+      max-width: 212px;
+      top: 5vw;
+      left: 4.5vw;
+
+      @include dMax {
+        top: 76px;
+        left: 69px;
+      }
+    }
+
+    &-2 {
+      width: 15.23vw;
+      max-width: 234px;
+      right: -1.5vw;
+      top: 9.5vw;
+
+      @include dMax {
+        right: -23px;
+        top: 145px;
+      }
+    }
+
+    &-3 {
+      width: 9.76vw;
+      max-width: 150px;
+      bottom: 1vw;
+      left: 10.5vw;
+
+      @include dMax {
+        bottom: 15px;
+        left: 161px;
+      }
+    }
+  }
+
+  &-title {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 39px;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 42px;
+    text-transform: uppercase;
+    color: #fc6652;
+    text-shadow: 0px 4px 50px rgba(252, 102, 82, 0.53);
+
+    @include test1 {
+      margin-bottom: (2.53vw * 1.2);
+      font-size: (3.25vw * 1.2);
+      line-height: (2.73vw * 1.2);
+    }
+
+    @include mMax {
+      margin-bottom: 4.26vw;
+      font-size: 8.53vw;
+      line-height: 8.53vw;
+      padding-left: 9.06vw;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      right: calc(100% + 14px);
+      display: block;
+      width: 222px;
+      height: 5px;
+      border-radius: 10px;
+      background: linear-gradient(to right, #fc665200 0%, #fc6652 100%);
+
+      @include test1 {
+        right: calc(100% + (0.91vw * 1.2));
+        width: (14.45vw * 1.2);
+        height: (0.32vw * 1.2);
+        border-radius: (0.65vw * 1.2);
+      }
+
+      @include mMax {
+        width: 13.33vw;
+        height: 0.8vw;
+        right: calc(100% - 6.93vw);
+      }
+    }
+  }
+
+  &-number {
+    position: absolute;
+    top: 200px;
+    right: 70px;
+    max-width: 100%;
+
+    @include test1 {
+      top: (13.02vw * 1.2);
+      right: (4.55vw * 1.2);
+      width: (31.31vw * 1.2);
+    }
+
+    @include mMax {
+      width: 68vw;
+      right: 0;
+      top: 21.33vw;
+    }
+  }
+}
+
+.how_block {
+  padding-bottom: 79px;
+
+  @include test1 {
+    padding-bottom: (5.14vw * 1.2);
+  }
+
+  @include mMax {
+    padding-bottom: 8.53vw;
+  }
+
+  h2 {
+    display: block;
+    margin-bottom: 64px;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 48px;
+    color: #ffffff;
+
+    @include test1 {
+      margin-bottom: (4.16vw * 1.2);
+      font-size: (2.6vw * 1.2);
+      line-height: (3.125vw * 1.2);
+    }
+
+    @include mMax {
+      font-size: 6.4vw;
+      line-height: 8.53vw;
+      margin-bottom: 8.53vw;
+    }
+  }
+  &-flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    @include mMax {
+      display: block;
+    }
+  }
+
+  &-item {
+    position: relative;
+    z-index: 9;
+    width: 33.33%;
+    box-sizing: border-box;
+    padding: 41px 0 24px;
+
+    @include test1 {
+      padding: (2.66vw * 1.2) 0 (1.56vw * 1.2);
+    }
+
+    @include mMax {
+      padding: 0;
+      width: 100%;
+
+      & + & {
+        margin-top: 4.26vw;
+      }
+    }
+
+    &:nth-child(2) {
+      z-index: 10;
+      padding: 0;
+    }
+
+    &:nth-child(3) {
+      span {
+        margin-left: auto;
+        margin-right: 5px;
+
+        @include test1 {
+          margin-right: (0.32vw * 1.2);
+        }
+      }
+    }
+
+    &_content {
+      background-color: #fff;
+      box-sizing: border-box;
+      padding: 0 20px 55px 20px;
+      height: 100%;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+
+      @include test1 {
+        padding: 0 (1.3vw * 1.2) (3.58vw * 1.2) (1.3vw * 1.2);
+      }
+
+      @include mMax {
+        padding: 3.46vw 4vw 5.6vw;
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 32px;
+        margin-left: 5px;
+        width: 44px;
+        height: 44px;
+        font-weight: bold;
+        font-size: 22px;
+        line-height: 30px;
+        color: #ffffff;
+        background: #fc6652;
+
+        @include test1 {
+          margin-bottom: (2.08vw * 1.2);
+          margin-left: (0.32vw * 1.2);
+          width: (2.86vw * 1.2);
+          height: (2.86vw * 1.2);
+          font-size: (1.43vw * 1.2);
+          line-height: (1.95vw * 1.2);
+        }
+
+        @include mMax {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 13.06vw;
+          height: 12.53vw;
+          margin-left: 0;
+        }
+      }
+
+      h2 {
+        margin-bottom: 48px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+        color: #494947;
+
+        @include test1 {
+          margin-bottom: (3.125vw * 1.2);
+          font-size: (1.56vw * 1.2);
+          line-height: (2.08vw * 1.2);
+        }
+
+        @include mMax {
+          font-size: 4.26vw;
+          line-height: 5.86vw;
+          margin-bottom: 10.4vw;
+          padding-left: 15.73vw;
+        }
+      }
+
+      p {
+        position: relative;
+        display: block;
+        padding-left: 26px;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+        color: #171716;
+
+        @include test1 {
+          padding-left: (1.69vw * 1.2);
+          font-size: (1.17vw * 1.2);
+          line-height: (1.56vw * 1.2);
+        }
+
+        b {
+          font-weight: 500;
+        }
+
+        @include mMax {
+          font-size: 3.46vw;
+          line-height: 4.8vw;
+          padding-left: 5.6vw;
+        }
+
+        & + p {
+          margin-top: 40px;
+
+          @include test1 {
+            margin-top: (2.6vw * 1.2);
+          }
+
+          @include mMax {
+            margin-top: 4.26vw;
+          }
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          display: block;
+          flex-shrink: 0;
+          margin-top: 5px;
+          margin-right: 10px;
+          width: 13px;
+          height: 15px;
+          background: center / auto url(../img/how_play.svg) no-repeat;
+
+          @include test1 {
+            width: (0.84vw * 1.2);
+            height: (0.97vw * 1.2);
+            margin-top: (0.32vw * 1.2);
+            margin-right: (0.65vw * 1.2);
+            background-size: cover;
+          }
+
+          @include mMax {
+            width: 3.46vw;
+            height: 4vw;
+            margin-top: 0.53vw;
+            background-size: cover;
+          }
+        }
+      }
+    }
+
+    &_active-content {
+      box-sizing: border-box;
+      padding: 0 30px 26px;
+      height: 100%;
+      background: #fc6652;
+      box-shadow: 0px 0px 50px rgba(252, 102, 82, 0.6);
+
+      @include test1 {
+        padding: 0 (1.95vw * 1.2) (1.69vw * 1.2);
+      }
+
+      @include mMax {
+        position: relative;
+        padding: 3.46vw 4vw 5.6vw;
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 22px;
+        width: 44px;
+        height: 44px;
+        background: #ffffff;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+        color: #fc6652;
+
+        @include test1 {
+          margin-bottom: (1.43vw * 1.2);
+          width: (2.86vw * 1.2);
+          height: (2.86vw * 1.2);
+          font-size: (1.56vw * 1.2);
+          line-height: (2.08vw * 1.2);
+        }
+
+        @include mMax {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 13.06vw;
+          height: 12.53vw;
+        }
+      }
+
+      h2 {
+        display: block;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 38px;
+
+        @include test1 {
+          font-size: (1.56vw * 1.2);
+          line-height: (2.08vw * 1.2);
+          margin-bottom: (2.47vw * 1.2);
+        }
+
+        @include mMax {
+          margin-bottom: 10.66vw;
+          font-size: 4.26vw;
+          line-height: 5.86vw;
+          text-align: left;
+          padding-left: 14.66vw;
+        }
+      }
+
+      p {
+        display: block;
+        margin-bottom: 48px;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        text-align: center;
+        color: #ffffff;
+
+        @include test1 {
+          margin: 0 auto;
+          margin-bottom: (3.125vw * 1.2);
+          font-size: (1.17vw * 1.2);
+          line-height: (1.69vw * 1.2);
+          max-width: (22.13vw * 1.2);
+        }
+
+        b {
+          font-weight: 500;
+        }
+
+        @include mMax {
+          font-size: 3.46vw;
+          line-height: 4.8vw;
+          text-align: left;
+          margin-bottom: 4.26vw;
+        }
+
+        @include mMax {
+          br {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &-pay {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin: 54px -11px -22px;
+
+    @include test1 {
+      margin: (3.51vw * 1.2) (-0.71vw * 1.2) (-1.43vw * 1.2);
+    }
+
+    @include mMax {
+      justify-content: center;
+      margin: 4.26vw -2.66vw 0;
+    }
+
+    li {
+      margin: 0 11px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 22px;
+
+      @include test1 {
+        margin: 0 (0.71vw * 1.2);
+        margin-bottom: (1.43vw * 1.2);
+      }
+
+      @include mMax {
+        max-width: 24vw;
+        margin: 0 2.66vw 5.86vw;
+      }
+    }
+
+    a {
+      display: flex;
+      box-sizing: border-box;
+      justify-content: center;
+      align-items: center;
+      width: 100px;
+      height: 100px;
+      border: 1px solid #cbcbcb;
+      border-radius: 20px;
+      transition: 0.2s;
+
+      @include test1 {
+        width: (6.51vw * 1.2);
+        height: (6.51vw * 1.2);
+        border-radius: (1.3vw * 1.2);
+      }
+
+      @include mMax {
+        width: 24vw;
+        height: 24vw;
+      }
+
+      img {
+        display: block;
+        width: 50%;
+      }
+
+      &:hover {
+        @include dMin {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  &-links {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    li {
+      margin: 0 22px;
+
+      @include test1 {
+        margin: 0 (1.43vw * 1.2);
+      }
+
+      @include mMax {
+        margin: 0 4.26vw;
+      }
+
+      &:first-child {
+        a {
+          img {
+            margin-right: -10px;
+          }
+        }
+      }
+    }
+
+    a {
+      width: 100px;
+      height: 100px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #dcdcdc;
+      border-radius: 20px;
+      transition: 0.2s;
+
+      @include test1 {
+        width: (6.51vw * 1.2);
+        height: (6.51vw * 1.2);
+        border-radius: (1.3vw * 1.2);
+      }
+
+      @include mMax {
+        width: 24vw;
+        height: 24vw;
+      }
+
+      img {
+        display: block;
+        width: 50%;
+      }
+
+      &:hover {
+        @include dMin {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  &-btn_wrap {
+    margin-top: 40px;
+
+    @include test1 {
+      margin-top: (2.6vw * 1.2);
+    }
+
+    @include mMax {
+      margin-top: 8.53vw;
+    }
+
+    a {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 77px;
+      box-sizing: border-box;
+      padding: 0 20px 0 88px;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 22px;
+      text-decoration: none;
+      color: #fc6652;
+      background: #ffffff;
+      border-radius: 84px;
+      transition: 0.2s;
+
+      @include test1 {
+        min-height: (5.01vw * 1.2);
+        padding: 0 (1.3vw * 1.2) 0 (5.72vw * 1.2);
+        font-size: (1.56vw * 1.2);
+        line-height: (1.43vw * 1.2);
+        border-radius: (5.46vw * 1.2);
+
+        img {
+          width: 3.125vw;
+        }
+      }
+
+      @include mMax {
+        min-height: 14.93vw;
+        max-width: 60vw;
+        font-size: 4.8vw;
+        line-height: 6.4vw;
+        padding-left: 13.06vw;
+        padding-right: 6.4vw;
+        margin: 0 auto;
+
+        span {
+          position: relative;
+          font-size: 4.8vw;
+          line-height: 6.4vw;
+        }
+
+        img {
+          width: 9.86vw;
+        }
+      }
+
+      &:hover {
+        @include dMin {
+          transform: translateY(-15px);
+        }
+      }
+
+      span {
+        display: block;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        margin: 0;
+        margin-right: auto;
+        padding-right: 5px;
+      }
+    }
+  }
+}

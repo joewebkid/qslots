@@ -1,0 +1,29 @@
+@mixin mMax {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tMax {
+  @media (max-width: 1060px) {
+    @content;
+  }
+}
+
+@mixin test1 {
+  @media (max-width: 1250px) and (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin dMin {
+  @media (min-width: 769px) {
+    @content;
+  }
+}
+
+@mixin dMax {
+  @media (min-width: 1537px) {
+    @content;
+  }
+}

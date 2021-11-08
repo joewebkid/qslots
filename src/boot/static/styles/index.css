@@ -1,0 +1,64 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap'); */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.no_selection {
+    user-select: none;
+
+    /* standard syntax */
+    -webkit-user-select: none;
+
+    /* webkit (safari, chrome) browsers */
+    -moz-user-select: none;
+
+    /* mozilla browsers */
+    -khtml-user-select: none;
+
+    /* webkit (konqueror) browsers */
+    -ms-user-select: none;
+
+    /* IE10+ */
+    overflow: hidden;
+}
+
+#root {
+    min-height: 100%;
+}
+
+.containerMain {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.logoImg {
+    display: inline-block;
+    float: left;
+    padding: 5px;
+    margin-left: 15px;
+    height: 56px;
+    width: 60px;
+}
+
+.navbar-brand {
+    padding: 18px 5px;
+    display: inline-block;
+    font-weight: bolder;
+}
+
+.overfl__initial {
+    overflow: hidden;
+
+    /* overflow: initial; */
+
+    /* overflow: -webkit-paged-x; */
+
+    /* position: -webkit-sticky; */
+}

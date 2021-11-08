@@ -1,0 +1,10 @@
+.idea/
+node_modules/
+out/
+build/
+.env
+.eslintcache
+.stylelintcache
+npm-debug.log
+tsconfig.tsbuildinfo
+*.DS_Store
