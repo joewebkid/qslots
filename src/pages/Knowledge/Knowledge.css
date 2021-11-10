@@ -1,9 +1,18 @@
 .knowledge-page-intro {
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   justify-content: center;
   height: 100vh;
   align-items: center;
   color: #000;
+  margin-left: 100px;
+}
+
+.answers-wrap {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
 }

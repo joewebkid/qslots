@@ -1,0 +1,12 @@
+.rest-time {
+  font-weight: 700;
+  padding: 10px 10px 30px 0;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 26px;
+  top: 0;
+  text-align: center;
+}
+
+.rest-time.few-time {
+  color: red;
+}
