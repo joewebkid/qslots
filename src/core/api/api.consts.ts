@@ -1,5 +1,5 @@
 // export const API_BASE_PATH = 'https://platform.qsolts.com/api';
-export const API_BASE_PATH = "https://test.dev.qsolts.com/api2";
+export const API_BASE_PATH = "https://test.dev.qsolts.com/api";
 
 export enum METHOD {
   GET = "GET",

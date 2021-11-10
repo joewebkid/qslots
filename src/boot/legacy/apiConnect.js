@@ -3,7 +3,7 @@ import cookie from "react-cookies";
 // export const urlAuth = 'http://84.201.161.76:5001'
 
 // export const urlAuth = "https://platform.qsolts.com/api";
-export const urlAuth = "https://test.dev.qsolts.com/api2";
+export const urlAuth = "https://test.dev.qsolts.com/api";
 
 // export const urlAuth = 'http://0.0.0.0:5001'
 
