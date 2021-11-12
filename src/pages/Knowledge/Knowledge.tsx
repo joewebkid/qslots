@@ -32,8 +32,17 @@ const KnowledgeComponent: FC = memo(() => {
         Dolorem voluptate optio officia accusantium quisquam, corporis quos molestiae ab dolore"
           />
           <Container maxWidth="xs" className="answers-wrap">
-            <Timer Time="00:12" />
-            <AnswersVariants />
+            <Timer initialTime={2} />
+            <AnswersVariants
+              Answers={[
+                "вариант 1",
+                "вариант 2",
+                "вариант 3",
+                "вариант 4",
+                "вариант 5",
+              ]}
+              AnswerType="1"
+            />
             <AnswerButton buttonLabel="Ответить" />
           </Container>
         </div>
