@@ -9,11 +9,7 @@ export default function AnswerButton({
   buttonLabel: any;
 }) {
   return (
-    <Button
-      className="answer-button"
-      style={{ backgroundColor: "#fc6652" }}
-      variant="contained"
-    >
+    <Button className="answer-button" variant="contained">
       {buttonLabel}
     </Button>
   );

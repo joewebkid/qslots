@@ -14,11 +14,21 @@
   font-weight: 600;
   font-size: 16px;
 }
-
 .question-text {
   padding: 20px;
-}
-.paperRoot {
-  height: 300px;
   overflow-x: scroll;
+  height: 300px;
+}
+
+.paperRoot {
+  padding: 20px;
+}
+.question-text::-webkit-scrollbar {
+  width: 7px;
+  background: transparent;
+}
+
+.question-text::-webkit-scrollbar-thumb {
+  background-color: #e8e8e8;
+  border-radius: 10px;
 }

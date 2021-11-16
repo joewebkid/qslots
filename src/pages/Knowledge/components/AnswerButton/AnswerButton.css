@@ -1,4 +1,11 @@
 .answer-button {
-  max-width: 150px;
+  min-width: 300px;
   margin: 0 auto;
+  background-color: #fc6652;
+  color: #fff;
+}
+@media (max-width: 400px) {
+  .answer-button {
+    min-width: 150px;
+  }
 }

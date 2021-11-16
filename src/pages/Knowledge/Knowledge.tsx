@@ -6,23 +6,25 @@ import Question from "./components/Question/Question";
 import Timer from "./components/Timer/Timer";
 import AnswersVariants from "./components/AnswersVariants/AnswersVariants";
 import AnswerButton from "./components/AnswerButton/AnswerButton";
+import IconButton from "@material-ui/core/IconButton";
+import { ReactComponent as LogoSvg } from "../CourseLegacy/style/logo.svg";
+import SvgIcon from "@material-ui/core/SvgIcon";
 
 import "./Knowledge.css";
-export const DeadlineContext = createContext(false);
+export const DeadlineContext = createContext<any>(false);
 const KnowledgeComponent: FC = memo(() => {
   const [timestatus, setTimeStatus] = useState(false);
 
   const SetFewTimeTheme = () => {
     setTimeStatus(true);
   };
+  let contextValue = { timestatus, fewTimeTheme: SetFewTimeTheme };
   return (
     <div className="knowledge-page">
-      <DeadlineContext.Provider
-        value={{
-          timestatus,
-          fewTimeTheme: SetFewTimeTheme,
-        }}
-      >
+      <IconButton style={{ position: "absolute", left: 100 }}>
+        <SvgIcon component={LogoSvg} viewBox="0 0 31 31" fontSize="large" />
+      </IconButton>
+      <DeadlineContext.Provider value={contextValue}>
         <NavVertical />
         <Container maxWidth="lg">
           <div className="knowledge-page-intro">
@@ -47,11 +49,12 @@ const KnowledgeComponent: FC = memo(() => {
               <Timer initialTime={20} />
               <AnswersVariants
                 Answers={[
-                  "вариант 1",
-                  "вариант 2",
-                  "вариант 3",
-                  "вариант 4",
-                  "вариант 5",
+                  { id: 1, label: "вариант 1", checked: false },
+                  { id: 2, label: "вариант 2", checked: false },
+                  { id: 3, label: "вариант 3", checked: false },
+                  { id: 4, label: "вариант 4", checked: false },
+                  { id: 5, label: "вариант 5", checked: false },
+                  { id: 6, label: "вариант 6", checked: false },
                 ]}
                 AnswerType="1"
               />
