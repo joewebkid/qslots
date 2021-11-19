@@ -1,8 +1,16 @@
 .answer-list {
+  padding-left: 0;
 }
+.answer-list-item {
+  border-radius: 5px;
+  margin: 10px 0;
+  width: 100%;
+}
+
 .answer-list-item.active {
-  background-color: #d9d9d9;
+  background-color: #d9d9d9e5;
 }
-.answer-list-item.few-time.active {
-  background-color: #fc6652;
+
+.answer-list-item.active.few-time {
+  background-color: #fc66524d;
 }

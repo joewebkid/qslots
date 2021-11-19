@@ -1,9 +1,9 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
-import "./Question.css";
+import "./TextQuestion.css";
 
-export default function Question({
+export default function TextQuestion({
   CurNumber,
   GenNumber,
   QuestionHeader,

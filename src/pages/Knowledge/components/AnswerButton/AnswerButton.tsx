@@ -4,13 +4,35 @@ import "./AnswerButton.css";
 
 export default function AnswerButton({
   buttonLabel,
+  Answers,
   ...props
 }: {
   buttonLabel: any;
+  Answers: {
+    id: number;
+    label: string;
+    checked: boolean;
+  }[];
 }) {
-  return (
-    <Button className="answer-button" variant="contained">
-      {buttonLabel}
-    </Button>
-  );
+  const saveAnswer = () => {
+    let answerId = 0;
+    Answers.map((answer) => {
+      if (answer.checked) {
+        answerId = answer.id;
+      }
+    });
+    console.log(answerId);
+    return answerId;
+  };
+  {
+    return (
+      <Button
+        onClick={saveAnswer}
+        className="answer-button"
+        variant="contained"
+      >
+        {buttonLabel}
+      </Button>
+    );
+  }
 }

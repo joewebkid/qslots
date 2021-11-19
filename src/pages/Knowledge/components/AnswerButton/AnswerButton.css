@@ -1,5 +1,6 @@
 .answer-button {
-  min-width: 300px;
+  min-width: 200px;
+  height: 60px;
   margin: 0 auto;
   background-color: #fc6652;
   color: #fff;

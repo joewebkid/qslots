@@ -1,0 +1,121 @@
+{
+  "lessons": [
+    {
+      "duration_min": 2,
+      "id": "3eb6fee7-6183-4055-925a-c3a2a3324fac",
+      "is_completed": false,
+      "label": "Вербальный тест - общая информация",
+      "mini_cover": "https://platform.qsolts.com/pic2/07.jpg",
+      "questions": [
+        {
+          "answer": "8e34398a-92d3-4520-a2b3-d451e39a4b86",
+          "id": "7425f9c0-9f4c-4ede-b5a6-a02e4d493d37",
+          "label": "Что оценивают вербальные тесты?",
+          "variants": [
+            {
+              "id": "ab95c266-a47f-4d4f-aca7-64933e8a68fb",
+              "is_right_answer": false,
+              "label": "Способность искать логические закономерности"
+            },
+            {
+              "id": "8e34398a-92d3-4520-a2b3-d451e39a4b86",
+              "is_right_answer": true,
+              "label": "Способность делать выводы на основе текста"
+            },
+            {
+              "id": "a014d499-fdca-4e83-87ad-54ae7e92f1bc",
+              "is_right_answer": false,
+              "label": "Способность к восприятию и анализу информации в форме таблиц и диаграмм"
+            }
+          ]
+        },
+        {
+          "answer": "6cea1d4e-da41-4db8-95f8-b00e81849921",
+          "id": "351050e4-fe37-4c82-bb4f-665cb4aaad1c",
+          "label": "Следует ли опираться на общеизвестные факты при решении вербального теста?",
+          "variants": [
+            {
+              "id": "b6c26441-540f-447d-b7de-fc8cc1f380e0",
+              "is_right_answer": false,
+              "label": "Да, чем больше знаешь – тем лучше"
+            },
+            {
+              "id": "6cea1d4e-da41-4db8-95f8-b00e81849921",
+              "is_right_answer": true,
+              "label": "Нет, необходимо делать выводы только на основе информации, представленной в тексте"
+            }
+          ]
+        }
+      ],
+      "url": "platform.qsolts.com/media/qs_часть_7.mp4",
+      "z_index": 0
+    },
+    {
+      "duration_min": 2,
+      "id": "e1fdea57-e837-48c3-a85e-726fc72b3c56",
+      "is_completed": false,
+      "label": "Особенности вербального теста Elements",
+      "mini_cover": "https://platform.qsolts.com/pic2/11.jpg",
+      "questions": [
+        {
+          "answer": "11915d2f-c261-482f-9e6d-c6e1580608af",
+          "id": "b9284bae-3cd9-4b5a-b2ad-6d841d612104",
+          "label": "Какой оптимальный порядок работы с вербальным вопросом?",
+          "variants": [
+            {
+              "id": "f48443cd-cdf8-416a-b3b7-142ddae7851a",
+              "is_right_answer": false,
+              "label": "При первом ознакомлении с текстом поставить ответ, как только он встретился в отрывке и немедленно перейти к следующему вопросу"
+            },
+            {
+              "id": "11915d2f-c261-482f-9e6d-c6e1580608af",
+              "is_right_answer": true,
+              "label": "При первом ознакомлении с текстом внимательно его изучить, поставить ответ, остаток времени потратить на то, чтобы еще раз вникнуть в текст, тк он встретится повторно"
+            }
+          ]
+        },
+        {
+          "answer": "d5c75642-ed78-4ec9-8b0a-6c92e0bc5632",
+          "id": "2a2d81db-29ce-48f3-b137-47c4116f0cd3",
+          "label": "Сколько секунд отводится на вопрос?",
+          "variants": [
+            {
+              "id": "d5c75642-ed78-4ec9-8b0a-6c92e0bc5632",
+              "is_right_answer": true,
+              "label": "от 60 до 75 сек"
+            },
+            {
+              "id": "c188b007-d87c-466a-bc66-bfde600c096e",
+              "is_right_answer": false,
+              "label": "120 сек"
+            },
+            {
+              "id": "488c96de-c145-4034-9e9f-31de65cb4196",
+              "is_right_answer": false,
+              "label": "90 сек"
+            }
+          ]
+        },
+        {
+          "answer": "770f0d31-385a-4691-9d73-fb2cc57a9ce4",
+          "id": "702252e1-8439-4fe0-9cc4-48e43677ec18",
+          "label": "В тесте «Вербальные элементы» время отводится на ..",
+          "variants": [
+            {
+              "id": "770f0d31-385a-4691-9d73-fb2cc57a9ce4",
+              "is_right_answer": true,
+              "label": "каждый вопрос"
+            },
+            {
+              "id": "7bd72318-e8ba-4e79-a02f-f2a9f8fa91b2",
+              "is_right_answer": false,
+              "label": "весь тест"
+            }
+          ]
+        }
+      ],
+      "url": "platform.qsolts.com/media/qs_часть_11.mp4",
+      "z_index": 1
+    }
+  ]
+}

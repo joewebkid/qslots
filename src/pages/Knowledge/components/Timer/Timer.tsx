@@ -27,13 +27,13 @@ export default function Timer({ initialTime, ...props }: { initialTime: any }) {
         clearTimeout(timeout);
         return;
       } else {
-        if (timestatus == false && value < 16) {
-          fewTimeTheme();
-        }
         updateValue();
       }
     }, 1000);
-  }, [updateValue]);
+    if (timestatus == false && value < 16) {
+      fewTimeTheme();
+    }
+  }, [value]);
 
   return (
     <div>

@@ -46,8 +46,9 @@ export const NavVertical: FC = memo(() => {
     (position: RouteValueProps["position"]) =>
       Object.values(ROUTES)
         .filter((route) => route.position === position)
-        .map((route) => (
+        .map((route, index) => (
           <Link
+            key={index}
             to={route.path}
             onClick={route.name === "logout" ? handleClickLogout : () => null}
           >
