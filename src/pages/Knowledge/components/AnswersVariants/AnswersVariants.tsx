@@ -6,14 +6,16 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { DeadlineContext } from "../../Knowledge";
 import "./AnswerVariants.css";
 
+type ID = number | string;
+
 function AnswerList({
   answers,
 }: {
-  answers: { id: number; label: string; checked: boolean }[];
+  answers: { id: ID; label: string; checked: boolean }[];
 }) {
   const { timestatus } = useContext(DeadlineContext);
   const [answerList, changeAnswerStatus] = useState(answers);
-  const chooseAnswer = (id: number) => {
+  const chooseAnswer = (id: ID) => {
     changeAnswerStatus(
       answerList.map((answer) => {
         if (answer.id === id) {

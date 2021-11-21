@@ -12,13 +12,13 @@ export default function Timer({ initialTime, ...props }: { initialTime: any }) {
     return value;
   };
   const updateValue = function () {
-    updateValueFun(() => {
-      if (value < 16) {
-        if (value < 11) {
-          return `0${value - 1}`;
+    updateValueFun((prevValue: number) => {
+      if (prevValue <= 15) {
+        if (prevValue < 11) {
+          return `0${prevValue - 1}`;
         }
       }
-      return value - 1;
+      return prevValue - 1;
     });
   };
   useEffect(() => {
