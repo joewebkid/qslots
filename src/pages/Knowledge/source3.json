@@ -1,0 +1,23 @@
+{
+  "code": 200,
+  "msg": "Вопрос сгенерирован системой успешно",
+  "obj": {
+    "material": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veritatis corporis officiis obcaecati consectetur officia esse culpa quibusdam delectus doloribus veniam nisi praesentium necessitatibus eius, aut distinctio nam atque perspiciatis! Dolorem voluptate optio officia accusantium quisquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veritatis corporis officiis obcaecati consectetur officia esse culpa quibusdam delectus doloribus veniam nisi praesentium necessitatibus eius, aut distinctio nam atque perspiciatis! Dolorem voluptate optio officia accusantium quisquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veritatis corporis officiis obcaecati consectetur officia esse culpa quibusdam delectus doloribus veniam nisi praesentium necessitatibus eius, aut distinctio nam atque perspiciatis! Dolorem voluptate optio officia accusantium quisquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veritatis corporis officiis obcaecati consectetur officia esse culpa quibusdam delectus doloribus veniam nisi praesentium necessitatibus eius, aut distinctio nam atque perspiciatis! Dolorem voluptate optio officia accusantium quisquam Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veritatis corporis officiis obcaecati consectetur officia esse culpa quibusdam delectus doloribus veniam nisi praesentium necessitatibus eius, aut distinctio nam atque perspiciatis! Dolorem voluptate optio officia accusantium quisquam",
+    "current_number": 3,
+    "id": "d4012534-44da-485e-bffc-3160a291fe17",
+    "question_text": "Какое из утверждений следует из текста?",
+    "test_attempt_id": "ea4465b4-f2c1-4da9-b493-1312568eb5bd",
+    "time_answer_max": 60,
+    "variant_answers": {
+      "0": "вопрос 3 текст варианта ответа №1",
+      "1": "вопрос 3 варианта ответа №2",
+      "2": "вопрос 3 варианта ответа №3",
+      "3": "вопрос 3 варианта ответа №4",
+      "4": "вопрос 3 варианта ответа №5",
+      "5": "вопрос 3 варианта ответа №6",
+      "6": "вопрос 3 варианта ответа №7",
+      "7": "вопрос 3 варианта ответа №8",
+      "8": "вопрос 3 варианта ответа №9"
+    }
+  }
+}

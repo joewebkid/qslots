@@ -4,25 +4,25 @@ import Paper from "@material-ui/core/Paper";
 import "./TextQuestion.css";
 
 export default function TextQuestion({
-  CurNumber,
-  GenNumber,
-  QuestionHeader,
-  QuestionText,
+  curNumber,
+  genNumber,
+  questionHeader,
+  questionText,
   ...props
 }: {
-  CurNumber: string;
-  GenNumber: string;
-  QuestionHeader: string;
-  QuestionText: string;
+  curNumber: number;
+  genNumber: number;
+  questionHeader: string;
+  questionText: string;
 }) {
   return (
     <Container maxWidth="sm">
       <p className="question-count">
-        Вопрос <span>{CurNumber}</span> из <span>{GenNumber}</span>
+        Вопрос <span>{curNumber}</span> из <span>{genNumber}</span>
       </p>
-      <h3 className="question-header">{QuestionHeader}</h3>
+      <h3 className="question-header">{questionHeader}</h3>
       <Paper className="paperRoot" elevation={3}>
-        <p className="question-text">{QuestionText}</p>
+        <p className="question-text">{questionText}</p>
       </Paper>
     </Container>
   );

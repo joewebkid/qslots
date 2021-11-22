@@ -10,24 +10,16 @@ type ID = number | string;
 
 function AnswerList({
   answers,
+  chooseAnswer,
 }: {
   answers: { id: ID; label: string; checked: boolean }[];
+  chooseAnswer: any;
 }) {
   const { timestatus } = useContext(DeadlineContext);
-  const [answerList, changeAnswerStatus] = useState(answers);
-  const chooseAnswer = (id: ID) => {
-    changeAnswerStatus(
-      answerList.map((answer) => {
-        if (answer.id === id) {
-          answer.checked = !answer.checked;
-        } else {
-          answer.checked = false;
-        }
-        return answer;
-      })
-    );
-  };
 
+  const [answerList, changeAnswerStatus] = useState(answers);
+
+  // const ancw = [{id: '0', label: 'вопрос 1 текст варианта ответа №1', checked: false}]
   const listItems = answers.map((answer, index) => (
     <ListItem
       button
@@ -45,22 +37,45 @@ function AnswerList({
 }
 
 export default function AnswersVariants({
-  Answers,
-  AnswerType,
+  answers,
   ...props
 }: {
-  Answers: {
-    id: number;
+  answers: {
+    id: ID;
     label: string;
     checked: boolean;
   }[];
-  AnswerType: string;
 }) {
+  const [answersState, changeAnswers] = useState(answers);
+
+  useEffect(() => {
+    changeAnswers(answers);
+    console.log("поменялось", answers);
+  }, [answers]);
+
+  useEffect(() => {
+    changeAnswers(answers);
+  }, []);
+
+  const chooseAnswer = (id: ID) => {
+    changeAnswers(
+      answers.map((answer) => {
+        if (answer.id === id) {
+          answer.checked = !answer.checked;
+        } else {
+          answer.checked = false;
+        }
+        return answer;
+      })
+    );
+  };
+
   return (
     <Container>
       <h6>Варианты ответа</h6>
       <List aria-label="mailbox folders">
-        <AnswerList answers={Answers} />
+        {JSON.stringify(answers)}
+        <AnswerList answers={answersState} chooseAnswer={chooseAnswer} />
       </List>
     </Container>
   );

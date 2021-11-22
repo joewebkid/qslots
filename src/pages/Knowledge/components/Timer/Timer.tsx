@@ -11,6 +11,11 @@ export default function Timer({ initialTime, ...props }: { initialTime: any }) {
   const getValue = () => {
     return value;
   };
+
+  useEffect(() => {
+    updateValueFun(initialTime);
+  }, [initialTime]);
+
   const updateValue = function () {
     updateValueFun((prevValue: number) => {
       if (prevValue <= 15) {

@@ -2,21 +2,23 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import "./AnswerButton.css";
 
+type ID = number | string;
+
 export default function AnswerButton({
   buttonLabel,
-  Answers,
+  answers2,
   ...props
 }: {
-  buttonLabel: any;
-  Answers: {
-    id: number;
+  buttonLabel: string;
+  answers2: {
+    id: ID;
     label: string;
     checked: boolean;
   }[];
 }) {
   const saveAnswer = () => {
-    let answerId = 0;
-    Answers.map((answer) => {
+    let answerId: ID = "";
+    answers2.map((answer) => {
       if (answer.checked) {
         answerId = answer.id;
       }
