@@ -7,10 +7,10 @@
   width: 100%;
 }
 
-.answer-list-item.active {
+.answer-list-item:hover {
   background-color: #d9d9d9e5;
 }
 
-.answer-list-item.active.few-time {
+.answer-list-item.active {
   background-color: #fc66524d;
 }

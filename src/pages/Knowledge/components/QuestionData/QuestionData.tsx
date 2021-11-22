@@ -10,7 +10,6 @@ const getData = (
   questionNumber: number,
   SetQuestionsStatus: any,
   SetInitialTimeSatus: any,
-  answersVars: any,
   setAnswers: any
 ) => {
   fetch(`src/pages/knowledge/source${questionNumber}.json`)
@@ -18,7 +17,8 @@ const getData = (
     .then((result) => {
       SetQuestionsStatus(result);
       SetInitialTimeSatus(result.obj.time_answer_max);
-      answersVars.pop();
+      //   answersVars.pop();
+      const answersVars = [];
       for (let ans_var in result.obj.variant_answers) {
         answersVars.push({
           id: ans_var,
@@ -26,8 +26,8 @@ const getData = (
           checked: false,
         });
       }
+      setAnswers(answersVars);
     });
-  setAnswers(answersVars);
 };
 
 export default function QuestionData(props: any) {
@@ -54,13 +54,7 @@ export default function QuestionData(props: any) {
   ]);
   console.log(time);
   useEffect(() => {
-    getData(
-      questionNumber,
-      SetQuestionsStatus,
-      setTime,
-      answersVars,
-      setAnswers
-    );
+    getData(questionNumber, SetQuestionsStatus, setTime, setAnswers);
   }, []);
   return (
     <div>

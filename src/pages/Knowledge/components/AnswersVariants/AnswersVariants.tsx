@@ -74,7 +74,6 @@ export default function AnswersVariants({
     <Container>
       <h6>Варианты ответа</h6>
       <List aria-label="mailbox folders">
-        {JSON.stringify(answers)}
         <AnswerList answers={answersState} chooseAnswer={chooseAnswer} />
       </List>
     </Container>

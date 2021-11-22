@@ -18,6 +18,9 @@ export default function Timer({ initialTime, ...props }: { initialTime: any }) {
 
   const updateValue = function () {
     updateValueFun((prevValue: number) => {
+      if (timestatus == false && prevValue < 16) {
+        fewTimeTheme();
+      }
       if (prevValue <= 15) {
         if (prevValue < 11) {
           return `0${prevValue - 1}`;
@@ -35,9 +38,6 @@ export default function Timer({ initialTime, ...props }: { initialTime: any }) {
         updateValue();
       }
     }, 1000);
-    if (timestatus == false && value < 16) {
-      fewTimeTheme();
-    }
   }, [value]);
 
   return (
