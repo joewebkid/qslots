@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
+import QuestionData from "../QuestionData/QuestionData";
+import getData from "../QuestionData/QuestionData";
 import "./AnswerButton.css";
 
 type ID = number | string;
@@ -7,6 +9,12 @@ type ID = number | string;
 export default function AnswerButton({
   buttonLabel,
   answers2,
+  callback,
+  questionNumber,
+  SetQuestionsStatus,
+  setTime,
+  setAnswers,
+  numberSetFun,
   ...props
 }: {
   buttonLabel: string;
@@ -15,16 +23,35 @@ export default function AnswerButton({
     label: string;
     checked: boolean;
   }[];
+  callback: any;
+  questionNumber: any;
+  SetQuestionsStatus: any;
+  setTime: any;
+  setAnswers: any;
+  numberSetFun: any;
 }) {
+  let [answerNumber, setAnswerNumber] = useState(-1);
+
   const saveAnswer = () => {
-    let answerId: ID = "";
+    // setAnswerNumber
     answers2.map((answer) => {
       if (answer.checked) {
-        answerId = answer.id;
+        answerNumber = Number(answer.id);
       }
     });
-    console.log(answerId);
-    return answerId;
+
+    if (answerNumber !== -1) {
+      callback(
+        questionNumber,
+        SetQuestionsStatus,
+        setTime,
+        setAnswers,
+        numberSetFun
+      );
+      // return answerNumber;
+    } else {
+      // alert("Выберите вариант ответа");
+    }
   };
   {
     return (

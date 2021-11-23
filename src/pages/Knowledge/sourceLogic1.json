@@ -1,0 +1,130 @@
+{
+  "code": 200,
+  "msg": "Вопрос сгенерирован системой успешно",
+  "obj": {
+    "material": [
+      [
+        ["None"],
+        [
+          { "type": "vertical-arrow", "grad": 315 },
+          { "type": "vertical-arrow", "grad": 90 },
+          { "type": "vertical-arrow", "grad": 270 }
+        ],
+        [
+          { "type": "vertical-arrow", "grad": 315 },
+          { "type": "vertical-arrow", "grad": 45 },
+          { "type": "vertical-arrow", "grad": 135 }
+        ]
+      ],
+      [
+        [
+          { "type": "vertical-arrow", "grad": 315 },
+          { "type": "vertical-arrow", "grad": 90 },
+          { "type": "vertical-arrow", "grad": 270 }
+        ],
+        [
+          { "type": "vertical-arrow", "grad": 315 },
+          { "type": "vertical-arrow", "grad": 45 },
+          { "type": "vertical-arrow", "grad": 135 }
+        ],
+        [
+          { "type": "vertical-arrow", "grad": 315 },
+          { "type": "vertical-arrow", "grad": 0 },
+          { "type": "vertical-arrow", "grad": 0 }
+        ]
+      ],
+      [
+        [
+          { "type": "vertical-arrow", "grad": 315 },
+          { "type": "vertical-arrow", "grad": 45 },
+          { "type": "vertical-arrow", "grad": 135 }
+        ],
+        [
+          { "type": "vertical-arrow", "grad": 315 },
+          { "type": "vertical-arrow", "grad": 0 },
+          { "type": "vertical-arrow", "grad": 0 }
+        ],
+        [
+          { "type": "vertical-arrow", "grad": 315 },
+          { "type": "vertical-arrow", "grad": 315 },
+          { "type": "vertical-arrow", "grad": 225 }
+        ]
+      ]
+    ],
+    "text_question": "Укажите недостающий элемент последовательности: ",
+    "result": [
+      "1) стрелка 1 вращается на 0 градусов по часовой стрелке, закономерность развивается по вертикали и горизонтали одновременно",
+      "2) стрелка 2 вращается на 45 градусов против часовой стрелки, закономерность развивается по вертикали и горизонтали одновременно",
+      "3) стрелка 3 вращается на 135 градусов против часовой стрелки, закономерность развивается по вертикали и горизонтали одновременно"
+    ],
+    "right_answer": [
+      { "type": "vertical-arrow", "grad": 315 },
+      { "type": "vertical-arrow", "grad": 135 },
+      { "type": "vertical-arrow", "grad": 45 }
+    ],
+    "generated_answers_dict": [
+      [
+        [
+          { "type": "vertical-arrow", "grad": 315 },
+          { "type": "vertical-arrow", "grad": 135 },
+          { "type": "vertical-arrow", "grad": 45 }
+        ],
+        [
+          { "type": "vertical-arrow", "grad": 135 },
+          { "type": "vertical-arrow", "grad": 225 },
+          { "type": "vertical-arrow", "grad": 90 }
+        ]
+      ],
+      [
+        [
+          { "type": "vertical-arrow", "grad": 45 },
+          { "type": "vertical-arrow", "grad": 135 },
+          { "type": "vertical-arrow", "grad": 225 }
+        ],
+        [
+          { "type": "vertical-arrow", "grad": 180 },
+          { "type": "vertical-arrow", "grad": 135 },
+          { "type": "vertical-arrow", "grad": 315 }
+        ]
+      ],
+      [
+        [
+          { "type": "vertical-arrow", "grad": 180 },
+          { "type": "vertical-arrow", "grad": 180 },
+          { "type": "vertical-arrow", "grad": 90 }
+        ],
+        [
+          { "type": "vertical-arrow", "grad": 45 },
+          { "type": "vertical-arrow", "grad": 90 },
+          { "type": "vertical-arrow", "grad": 180 }
+        ]
+      ],
+      [
+        [
+          { "type": "vertical-arrow", "grad": 135 },
+          { "type": "vertical-arrow", "grad": 0 },
+          { "type": "vertical-arrow", "grad": 180 }
+        ],
+        [
+          { "type": "vertical-arrow", "grad": 135 },
+          { "type": "vertical-arrow", "grad": 135 },
+          { "type": "vertical-arrow", "grad": 90 }
+        ]
+      ]
+    ],
+    "right_answer_index": [0, 0],
+    "current_number": 3,
+    "id": "d4012534-44da-485e-bffc-3160a291fe17",
+    "question_text": "Какое из утверждений следует из текста?",
+    "test_attempt_id": "ea4465b4-f2c1-4da9-b493-1312568eb5bd",
+    "time_answer_max": 30,
+    "variant_answers": {
+      "0": "в. 3 текст варианта ответа №1",
+      "1": "в. 3 текст варианта ответа №2",
+      "2": "в. 3 текст варианта ответа №3",
+      "3": "в. 3 текст варианта ответа №4",
+      "4": "в. 3 текст варианта ответа №5",
+      "5": "в. 3 текст варианта ответа №6"
+    }
+  }
+}
